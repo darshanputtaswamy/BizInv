@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bizinv-apiserver-deployment
+spec:
+  replicas: 1 
+  selector:
+    matchLabels:
+      app: bizinv-apiserver
+  template:
+    metadata:
+      labels:
+        app: bizinv-apiserver
+    spec:
+      containers:
+        - name: bizinv-apiserver
+          image: l0ny1ucif32/bizinv-api
+          ports:
+            - containerPort: 3000
+          env:
+            - name: DATABASE_URL
+              value: mysql://root:testing@bizinv-db:3306/BizInvDB
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: bizinv-apiserver
+spec:
+  selector:
+    app: bizinv-apiserver
+  type: NodePort
+  ports:
+    - port: 3000 # expose the service on internal port 3000
+      targetPort: 3000 # our NodeJS app listens on port 3000

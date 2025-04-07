@@ -1,0 +1,2 @@
+[opc@vp-master-node ~]$ cat portfwddb 
+ kubectl port-forward --address 10.0.124.145 services/bizinv-db 3306:3306

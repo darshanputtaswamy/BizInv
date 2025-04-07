@@ -1,0 +1,1000 @@
+   10  kubectl get pv
+   11  kubectl get pvc
+   12  kubectl create -f ./local-pv01.yml 
+   13  kubectl create -f ./local-pvc01.yml 
+   14  kubectl get pvc
+   15  kubectl get pv
+   16  kubectl delete -f ./local-mysql.yml 
+   17  kubectl create -f ./local-mysql.yml 
+   18  kubectl get pods
+   19  clear
+   20  kubectl get pods
+   21  kubectl exec -it bizinv-db-6ccd578c8-8hl56 -- bash
+   22  kubectl get pods
+   23  kubectl exec -it bizinv-apiserver-deployment-5f65c6674c-54xxd -- bash
+   24  ls
+   25  kubectl get pods
+   26  kubectl delete -f ./local-bizInv-apiserver.yml 
+   27  kubectl create -f ./local-bizInv-apiserver.yml 
+   28  kubectl get pods
+   29  kubectl exec -it bizinv-apiserver-deployment-5f65c6674c-tsscc -- bash
+   30  kubectl service 
+   31  kubectl get service 
+   32  kubectl get service  -o wide
+   33  kubectl exec -it bizinv-apiserver-deployment-5f65c6674c-tsscc -- bash
+   34  kubectl logs bizinv-apiserver-deployment-5f65c6674c-tsscc
+   35  kubectl exec -it bizinv-apiserver-deployment-5f65c6674c-tsscc -- bash
+   36  kubectl get pods
+   37  kubectl delete -f ./local-bizInv-cache.yml 
+   38  kubectl delete -f ./local-bizInv-apiserver.yml 
+   39  kubectl get pods
+   40  kubectl create-f ./local-bizInv-cache.yml 
+   41  kubectl create -f ./local-bizInv-cache.yml 
+   42  kubectl create -f ./local-bizInv-apiserver.yml 
+   43  kubectl get pods
+   44  kubectl exec -it bizinv-apiserver-deployment-5f65c6674c-bkkhw --nash
+   45  kubectl exec -it bizinv-apiserver-deployment-5f65c6674c-bkkhw --bash
+   46  kubectl exec -it bizinv-apiserver-deployment-5f65c6674c-bkkhw -- bash
+   47  ls
+   48  kubectl create -f ./local-bizInv-frontendserver.yml
+   49  kubectl create -f ./local-bizInv-app.yml 
+   50  kubectl get pods
+   51  kubectl exec -it bizinv-db-6ccd578c8-8hl56 -- bash
+   52  kubectl get pods
+   53  kubectl delete bizinv-app-deployment-86b4dd4df7-n7qrz
+   54  kubectl delete -f ./local-bizInv-apiserver.yml 
+   55  kubectl delete -f ./local-bizInv-app.yml 
+   56  kubectl create -f ./local-bizInv-apiserver.yml 
+   57  kubectl create -f ./local-bizInv-app.yml 
+   58  kubectl get pods
+   59  kubectl exec -it bizinv-db-6ccd578c8-8hl56 -- bash
+   60  ls
+   61  kubectl get pods
+   62  kubectl exec -it bizinv-cache-869c9b5bf6-nsxhs  -- bash
+   63  cd /data/app/configs/
+   64  ls 
+   65  kubectl create -f ./local-bizInv-frontendserver.yml 
+   66  kubectl delete -f ./local-bizInv-app.yml 
+   67  kubectl create -f ./local-bizInv-frontendserver.yml 
+   68  kubectl create -f ./local-bizInv-app.yml 
+   69  kubectl get pods
+   70  ls
+   71  kubectl get pods
+   72  ls
+   73  view history20211120.txt 
+   74  getssl
+   75  ./getssl 
+   76  ls
+   77  cd /data/app/configs/
+   78  ls
+   79  cd ../
+   80  ls
+   81  cd configs/
+   82  ls
+   83  cat local-bizInv-frontendserver.yml
+   84  ls
+   85  cat local-bizInv-apiserver.yml
+   86  ls
+   87  cat local-bizInv-app.yml 
+   88  cd /etc/letsencrypt/
+   89  ls
+   90  cd ../
+   91  ls
+   92  cd -
+   93  ls
+   94  nginx
+   95  su
+   96  sudo su
+   97  kubectl stop -f /data/app/configs/local-bizInv-app.yml 
+   98  kubectl stop  /data/app/configs/local-bizInv-app.yml 
+   99  kubectl delete -f  /data/app/configs/local-bizInv-app.yml 
+  100  sudo si
+  101  kubectl delete -f  /data/app/configs/local-bizInv-apiserver.yml 
+  102  kubectl delete -f  /data/app/configs/local-bizInv-frontendserver.yml 
+  103  sudo systemctl status nginx
+  104  sudo systemctl start nginx
+  105  systemctl status nginx.service
+  106  kubectl get pods
+  107  sudo lsof -n -i :80 | grep LISTEN
+  108  sudo su
+  109  ls
+  110  cd /data/app/configs/
+  111  ls
+  112  kubectl get pods
+  113  kubectl create -f ./local-bizInv-apiserver.yml
+  114  kubectl create -f ./local-bizInv-frontendserver.yml
+  115  kubectl create -f ./local-bizInv-app.yml
+  116  kubectl get pods
+  117  kubectl get services
+  118  minikube service --url bizinv-db
+  119  ifconfig
+  120  ls
+  121  view history20211120.txt 
+  122  kubectl get services
+  123  kubectl port-forward --address 10.0.124.145 services/bizinv-db 3306:3306
+  124  sudo su
+  125  kubectl port-forward --address 10.0.124.145 services/bizinv-db 3306:3306
+  126  kubectl get pods
+  127  cd /data/app/configs/
+  128  ls
+  129  kubectl delete -f ./local-bizInv-apiserver.yml
+  130  kubectl delete -f ./local-bizInv-frontendserver.yml 
+  131  kubectl delete -f ./local-bizInv-app.yml 
+  132  kubectl create -f ./local-bizInv-apiserver.yml
+  133  kubectl create -f ./local-bizInv-frontendserver.yml 
+  134  kubectl create -f ./local-bizInv-app.yml 
+  135  kubectl get pods
+  136  ls
+  137  cd ~
+  138  ls
+  139  vi portfwddb
+  140  kubectl get pods
+  141  cd /data/app/configs/
+  142  kubectl delete -f ./local-bizInv-frontendserver.yml 
+  143  kubectl delete -f ./local-bizInv-app.yml 
+  144  kubectl create -f ./local-bizInv-frontendserver.yml 
+  145  kubectl create -f ./local-bizInv-app.yml 
+  146  kubectl get pods
+  147  exit
+  148  ls
+  149  cd /data/app/configs/
+  150  ls
+  151  kubectl delete -f ./local-bizInv-apiserver.yml 
+  152  kubectl delete -f ./local-bizInv-app.yml 
+  153  kubectl create -f ./local-bizInv-apiserver.yml 
+  154  kubectl create -f ./local-bizInv-app.yml 
+  155  kubectl get pods
+  156  ls
+  157  kubectl get pods
+  158  munikube status
+  159  munikube
+  160  minikube status
+  161  minikube start
+  162  ls
+  163  minikube status
+  164  minikube start
+  165  kubectl get pods
+  166  ls
+  167  cd /data
+  168  ls
+  169  cd app/frontend/nginx/
+  170  ls
+  171  cd config/
+  172  ls
+  173  vi nginx.conf
+  174  ls
+  175  cd ~
+  176  cd getssl
+  177  ls
+  178  ./getssl 
+  179  getssl 
+  180  history
+  181  letsencript
+  182  history| grep encript
+  183  ls
+  184  ./getssl 
+  185  ./getssl -c
+  186  ./getssl -i 
+  187  kubectl get pods
+  188  ls
+  189  cat history20211120.txt
+  190  ls
+  191  kubectl get pods
+  192  kubectl exec -it bizinv-db-6ccd578c8-8hl56 -- bash
+  193  ls
+  194  kubectl get pods
+  195  kubectl exec -it bizinv-apiserver-deployment-5f65c6674c-v4r6t -- bash
+  196  kubectl exec -it bizinv-db-6ccd578c8-8hl56 -- bash
+  197  kubectl exec -it bizinv-apiserver-deployment-5f65c6674c-v4r6t -- bash
+  198  kubectl exec -it bizinv-db-6ccd578c8-8hl56 -- bash
+  199  kubectl exec -it bizinv-apiserver-deployment-5f65c6674c-v4r6t -- bash
+  200  kubectl get pods
+  201  kubectl get service
+  202  kubectl port-forward --address 10.0.124.145 services/bizinv-db 3306:3306
+  203  mysqldump
+  204  ls
+  205  cd /app
+  206  cd /data/
+  207  ls
+  208  cd app/pv/
+  209  ls
+  210  cd ..
+  211  ls
+  212  cd configs/
+  213  ls
+  214  cat local-mysql.yml 
+  215  ls
+  216  cat local-bizInv-frontendserver.yml 
+  217  cat local-bizInv-cache.yml 
+  218  cat local-mysql.yml 
+  219  kubectl exec -it bizinv-db-6ccd578c8-8hl56 -- bash
+  220  sudo apt-get install postfix mailutils
+  221  sudo yum install postfix mailutils
+  222  sendmail
+  223  sudo yum install smtp
+  224  sudo yum install smttp
+  225  sudo yum install ssmtp
+  226  vi /etc/ssmtp/ssmtp.conf
+  227  sudo vi /etc/ssmtp/ssmtp.conf
+  228  echo "Testing...1...2...3" | ssmtp darshanmadival8@gmail.com
+  229  sudo vi /etc/ssmtp/ssmtp.conf
+  230  echo "Testing...1...2...3" | ssmtp 3weitsolutions@gmail.com
+  231  mail –s "Test Email" 3weitsolutions@gmail.com
+  232   echo "sample message" | mail -s "sample mail subject" weitsolutions@gmail.com
+  233  sendmail weitsolutions@gmail.com < echo "testing"
+  234  ls
+  235  sendmail weitsolutions@gmail.com  < dead.letter 
+  236  sudo mkfifo /var/spool/postfix/public/pickup
+  237  sudo service postfix restart
+  238  sendmail weitsolutions@gmail.com  < dead.letter 
+  239  cat dead.letter 
+  240   echo "sample message" | mail -s "sample mail subject" weitsolutions@gmail.com
+  241  mail –s "Test Email" 3weitsolutions@gmail.com
+  242  mail -s "test email" 3weitsolutions@gmail.com
+  243  ls
+  244  mail –s "Test Email" 3weitsolutions@gmail.com
+  245  mail -s "Test Email" 3weitsolutions@gmail.com
+  246  echo "Testing...1...2...3" | ssmtp 3weitsolutions@gmail.com
+  247  sudo vi /etc/ssmtp/ssmtp.conf
+  248  echo "Testing...1...2...3" | ssmtp 3weitsolutions@gmail.com
+  249  firewall-cmd --permanent --add-service=smtp
+  250  sudo firewall-cmd --permanent --add-service=smtp
+  251  mail 
+  252  vi test.txt
+  253  mail 3weitsolutions@gmail.com < test.txt 
+  254  gpg
+  255  cat "your message" > msg # just type your message. You can use editor too. 
+  256  gpg -ear "reciever gpg key" msg # encrypt it.
+  257  cat "your message" > msg
+  258  cat "your message" > msg.txt
+  259  cat "your message"
+  260  cat 
+  261  cat test
+  262  cat "test"
+  263  ls
+  264  cat msg
+  265  cat msg.txt
+  266  rm msg*
+  267  ls
+  268  cat test.txt 
+  269  gpg -ear "reciever gpg key" test.txt
+  270  date > /tmp/gpgtxt.txt
+  271  gpg -ea -r 3weitsolutions@gmail.com /tmp/gpgtxt.txt
+  272   echo date | mail -s "testing" 3weitsolutions@gmail.com -A test.txt
+  273  mail help
+  274  mail --help
+  275   echo date | mail -s "testing" 3weitsolutions@gmail.com -a test.txt
+  276  man mail
+  277  mail -s "testing" 3weitsolutions@gmail.com -a test.txt  -f text.txt
+  278  mail -s "testing" -a test.txt  3weitsolutions@gmail.com
+  279  echo `date`| mail -s "testing" -a test.txt  3weitsolutions@gmail.com
+  280  date "+%Y-%d-%m"
+  281  ls
+  282  cd /data/
+  283  ls
+  284  cd app
+  285  ls
+  286  mkdir backup
+  287  cd backup/
+  288  ls
+  289  touch `date "+%Y-%d-%m"`.zip
+  290  ls
+  291  pwd
+  292  file=`date "+%Y-%d-%m"`
+  293  If [ -n $file.zip ]
+  294  then
+  295  mail -s "DataBackup - $file" -a $file.zip  3weitsolutions@gmail.com
+  296  file=`date "+%Y-%d-%m"`
+  297  if [ -n $file.zip ]; then mail -s "DataBackup - $file" -a $file.zip  3weitsolutions@gmail.com; fi
+  298  file=`date "+%Y-%d-%m"`
+  299  if [ -n $file.zip ]; then echo "file attached" > mail -s "DataBackup - $file" -a $file.zip  3weitsolutions@gmail.com; fi
+  300  if [ -n $file.zip ]; then eacho"sending mail"; echo "file attached" > mail -s "DataBackup - $file" -a $file.zip  3weitsolutions@gmail.com; fi
+  301  file=`date "+%Y-%d-%m"`
+  302  if [ -n $file.zip ]; then echo "file attached" ; fi
+  303  file=`date "+%Y-%d-%m"`
+  304  if [ -n $file.zip ]; then echo "file attached" | mail -s "DataBackup - $file" -a $file.zip  3weitsolutions@gmail.com; fi
+  305  ls
+  306  rm 2022-15-04.zip 
+  307  if [ -n $file.zip ]; then echo "file attached" | mail -s "DataBackup - $file" -a $file.zip  3weitsolutions@gmail.com; else echo "backup file was not created" | mail -s "Failed: DataBackup - $file"  3weitsolutions@gmail.com; fi
+  308  if [ -n $file.zip ]; then echo "file attached"# | mail -s "DataBackup - $file" -a $file.zip  3weitsolutions@gmail.com; else echo "backup file was not created" #| mail -s "Failed: DataBackup - $file"  3weitsolutions@gmail.com; fi
+  309  if [ -f $file.zip ]; then echo "file attached"# | mail -s "DataBackup - $file" -a $file.zip  3weitsolutions@gmail.com; else echo "backup file was not created" #| mail -s "Failed: DataBackup - $file"  3weitsolutions@gmail.com; fi
+  310  touch `date "+%Y-%d-%m"`.zip
+  311  if [ -f $file.zip ]; then echo "file attached"# | mail -s "DataBackup - $file" -a $file.zip  3weitsolutions@gmail.com; else echo "backup file was not created" #| mail -s "Failed: DataBackup - $file"  3weitsolutions@gmail.com; fi; 
+  312  if [ -n $file.zip ]; then echo "file attached" | mail -s "DataBackup - $file" -a $file.zip  3weitsolutions@gmail.com; else echo "backup file was not created" | mail -s "Failed: DataBackup - $file"  3weitsolutions@gmail.com; fi
+  313  rm 2022-15-04.zip 
+  314  if [ -f $file.zip ]; then echo "file attached"# | mail -s "DataBackup - $file" -a $file.zip  3weitsolutions@gmail.com; else echo "backup file was not created" #| mail -s "Failed: DataBackup - $file"  3weitsolutions@gmail.com; fi; 
+  315  if [ -f $file.zip ]; then echo "file attached" | mail -s "DataBackup - $file" -a $file.zip  3weitsolutions@gmail.com; else echo "backup file was not created" | mail -s "Failed: DataBackup - $file"  3weitsolutions@gmail.com; fi
+  316  ls
+  317  cd ../
+  318  ls
+  319  cd configs/
+  320  ls
+  321  cd ../
+  322  ls
+  323  mkdir cornjobs
+  324  cd cornjobs/
+  325  vi mailback.sh
+  326  ls
+  327  ls -ltra
+  328  chmod +x mailback.sh
+  329  ls
+  330  cd ../
+  331  ls
+  332  cd backup/
+  333  ls
+  334  cd ../cornjobs/
+  335  ls
+  336  vi mailback.sh 
+  337  ls
+  338  ./mailback.sh 
+  339  crontab -l
+  340  crontab -e
+  341  crontab -l
+  342  cat /data/cornjobs/mailback.sh
+  343  cat /data/app/cornjobs/mailback.sh
+  344  crontab -l
+  345  crontab -e
+  346  crontab -l
+  347  cat /data/app/cornjobs/mailback.sh
+  348  crontab -e
+  349  vi /data/app/cornjobs/mailback.sh
+  350  /data/app/cornjobs/mailback.sh
+  351  cd /data/app/cornjobs/mailback.sh
+  352  cd /data/app/cornjobs/
+  353  ls
+  354  mkdir `date "+%Y-%d-%m"`.zip
+  355  ls
+  356  /data/app/cornjobs/mailback.sh
+  357  vi /data/app/cornjobs/mailback.sh
+  358  /data/app/cornjobs/mailback.sh
+  359  cat /data/app/cornjobs/mailback.sh 
+  360  cd ls #!/bin/sh
+  361  date=`date "+%Y-%d-%m"`
+  362  fullPath="/data/app/backup/$date.zip"
+  363  echo $fullPath
+  364  if [ -f $fullPath ]; then echo "file attached" | mail -s "DataBackup - $date" -a $fullPath 3weitsolutions@gmail.com; else echo "backup file was not created" | mail -s "Failed: DataBackup - $date"  3weitsolutions@gmail.com
+  365  ls /data/app/backup/2022-15-04.zip
+  366  cd /data/app/backup/
+  367  ls
+  368  touch 2022-15-04.zip
+  369  ls
+  370  cd ../
+  371  ls
+  372  cd cornjobs/
+  373  ls
+  374  ./mailback.sh 
+  375  ls
+  376  date --date="-1 days ago"
+  377  date --date="-1 days ago" "+%Y-%d-%m"
+  378  date
+  379  date --date="-2 days ago" "+%Y-%d-%m"
+  380  date --date="2 days ago" "+%Y-%d-%m"
+  381  date --date="1 days ago" "+%Y-%d-%m"
+  382  ls
+  383  mv 2022-15-04.zip 2022-14-04.zip/
+  384  ./mailback.sh 
+  385  vi ./mailback.sh 
+  386  ./mailback.sh 
+  387  cat ./mailback.sh 
+  388  ls
+  389  mv 2022-14-04.zip /data/app/backup/
+  390  ls
+  391  ./mailback.sh 
+  392  cd /data/app/backup/
+  393  ls
+  394  cd -
+  395  vi mailback.sh 
+  396  ./mailback.sh 
+  397  preDate=`date --date="1 days ago" "+%Y-%d-%m"`
+  398  preDate
+  399  echo $preDate
+  400  vi mailback.sh 
+  401  ./mailback.sh 
+  402  vi mailback.sh 
+  403  ls /data/app/backup/2022-14-04.zip
+  404  cd /data/app/backup/
+  405  ls
+  406  ls /data/app/backup/2022-14-04.zip
+  407  ls -ltra /data/app/backup/2022-14-04.zip
+  408  ls -l /data/app/backup/2022-14-04.zip
+  409  ls
+  410  ls -ltra
+  411  cd 2022-14-04.zip/
+  412  ls
+  413  cd ..
+  414  ls
+  415  mv 2022-15-04.zip 
+  416  rm 2022-15-04.zip 
+  417  ls
+  418  cd 2022-14-04.zip/
+  419  touch sample.txt
+  420  touch test.sql
+  421  ls
+  422  cd ../
+  423  ls
+  424  mv 2022-14-04.zip 2022-15-04
+  425  ls
+  426  zip 2022-15-04
+  427  ls
+  428  zip -r 2022-15-04.zip 2022-15-04
+  429  ls
+  430  cp 2022-15-04.zip 2022-14-04.zip
+  431  ks
+  432  ls
+  433  cd ../cornjobs/
+  434  ./mailback.sh 
+  435  vi mailback.sh 
+  436  ls
+  437  history
+  438  kubectl port-forward --address 10.0.124.145 services/bizinv-db 3306:3306
+  439  ls
+  440  cd ../
+  441  ls
+  442  cd backup/
+  443  ls
+  444  find . -mtime +1
+  445  find . -mtime -1
+  446  find . -mtime -3
+  447  find . -mtime +1
+  448  cd ../cornjobs/
+  449  ls
+  450  vi mailback.sh 
+  451  cat mailback.sh 
+  452  vi mailback.sh 
+  453  ./mailback.sh 
+  454  cd ../backup/
+  455  touch all-database-$(date +%d-%m-%Y_%H-%M-%S).zip
+  456  ls
+  457  cd ../cornjobs/
+  458  ./mailback.sh
+  459  vi mailback.sh 
+  460  touch $backupfolder/all-database-$(date +%d-%m-%Y).zip
+  461  touch all-database-$(date +%d-%m-%Y).zip
+  462  ls
+  463  mv all-database-15-04-2022.zip ../backup/
+  464  ls
+  465  cd ../backup/
+  466  ls
+  467  cd ../configs/
+  468  ls
+  469  cd ../cornjobs/
+  470  ls
+  471  ./mailback.sh 
+  472  ls
+  473  cd ../
+  474  ls
+  475  cd backup/
+  476  ls
+  477  cat mail
+  478  cd ..
+  479  ls
+  480  cd backup/
+  481  ls
+  482  pwd
+  483  rm 
+  484  rm -f
+  485  ls
+  486  rm -f *
+  487  ls
+  488  cd 2022-15-04/
+  489  ls
+  490  cd ../
+  491  rm -rf *
+  492  ls
+  493  kubectl exec -it bizinv-db-6ccd578c8-8hl56 -- bash
+  494  kubectl exec -it bizinv-db-6ccd578c8-8hl56 -- /var/tmp/backscript.sh
+  495  kubectl exec -it bizinv-db-6ccd578c8-8hl56 -- bash /var/tmp/backscript.sh
+  496  kubectl exec -it bizinv-db-6ccd578c8-8hl56 -- bash
+  497  ls
+  498  cd ../configs/
+  499  ls
+  500  vi local-mysql.yml 
+  501  cat local-bizInv-cache.yml 
+  502  ls
+  503  cat local-mysql.yml 
+  504  ls
+  505  cd /data/app
+  506  ls
+  507  cd backup/
+  508  ls
+  509  pwd
+  510  ls -ltr /data/app/cornjob
+  511  cd ../configs/
+  512  ls
+  513  cp local-mysql.yml local-mysql.yml_bkp20220415
+  514  vi local-mysql.yml
+  515  cat local-
+  516  cat local-mysql.yml
+  517  kubectl apply ./local-mysql.yml
+  518  kubectl apply -f ./local-mysql.yml
+  519  vi local-mysql.yml
+  520  vi ./local-mysql.yml
+  521  kubectl apply -f ./local-mysql.yml
+  522  kubectl apply -f ./local-mysql.yml_bkp20220415 
+  523  kubectl get pods
+  524  kubectl apply -f ./local-mysql.yml
+  525  cp ./local-mysql.yml_bkp20220415  ./local-mysql01.yml
+  526  vi ./local-mysql01.yml 
+  527  kubectl apply -f ./local-mysql01.yml
+  528  mv ./local-mysql01.yml ./local-mysql.yml
+  529  kubectl get pods
+  530  ls
+  531  cd //
+  532  ls
+  533  cd data/app/cornjobs/
+  534  ls
+  535  vi backupBizInvDB.sh
+  536  chmod +x backupBizInvDB.sh
+  537  ls
+  538  kubectl exec -it bizinv-db-74477cc59c-8m6kj -- bash /var/script/backscript.sh
+  539  kubectl exec -it bizinv-db-74477cc59c-8m6kj -- bash
+  540  ls
+  541  kubectl port-forward --address 10.0.124.145 services/bizinv-db 3306:3306
+  542  ls
+  543  cd ../
+  544  ls
+  545  kubectl exec -it bizinv-db-74477cc59c-8m6kj -- bash /var/script/backupBizInvDB.sh
+  546  ls
+  547  cd backup/
+  548  ls
+  549  cd ../
+  550  ls
+  551  cd cornjobs/
+  552  ls
+  553  vi backupBizInvDB.sh 
+  554  vi mailback.sh 
+  555  vi backupBizInvDB.sh 
+  556  ls
+  557  kubectl exec -it bizinv-db-74477cc59c-8m6kj -- bash /var/script/backupBizInvDB.sh
+  558  cd ../backup/
+  559  ls
+  560  kubectl exec -it bizinv-db-74477cc59c-8m6kj -- bash
+  561  vi ../cornjobs/backupBizInvDB.sh 
+  562  ls
+  563  vi ../cornjobs/backupBizInvDB.sh 
+  564  kubectl exec -it bizinv-db-74477cc59c-8m6kj -- bash /var/script/backupBizInvDB.sh
+  565  ls
+  566  exit
+  567  cd /data/app/cornjobs/
+  568  ls
+  569  ./mailback.sh 
+  570  vi ./mailback.sh 
+  571  ./mailback.sh 
+  572  ls
+  573  cd ../
+  574  cd backup/
+  575  ls
+  576  rm *
+  577  ls
+  578  cd ../
+  579  ls
+  580  cd cornjobs/
+  581  ls
+  582  vi mailback.sh
+  583  vi mailback.sh 
+  584  ./mailback.sh 
+  585  alias
+  586  ./mailback.sh 
+  587  vi ./mailback.sh 
+  588  ./mailback.sh 
+  589  vi ./mailback.sh 
+  590  ./mailback.sh 
+  591  cd ~
+  592  kubectl port-forward --address 10.0.124.145 services/bizinv-db 3306:3306
+  593  kubectl get pods
+  594  cd /data/app/configs/
+  595  ls
+  596  minikube stop
+  597  minikube start
+  598  kubectl get pods
+  599  kubectl port-forward --address 10.0.124.145 services/bizinv-db 3306:3306
+  600  cd /var/logs
+  601  cd /var/log
+  602  ls
+  603  cat corn
+  604  cat cron
+  605  su cat corn
+  606  su cat cron
+  607  su -
+  608  sudo su
+  609  crontab -e
+  610  date
+  611  crontab -e
+  612  date
+  613  crontab -e
+  614  crontab -l
+  615  date
+  616  watch date
+  617  ls
+  618  tail -f cron
+  619  sudo tail -f cron
+  620  crontab -e
+  621  crontab -l
+  622  ls
+  623  cd /data/app/backup/
+  624  ls
+  625  rm -rf all-database-16-04-2022*
+  626  ls
+  627  cat ../cornjobs/mailback.sh 
+  628  exit
+  629  cd /data/app/backup/
+  630  ls
+  631  ls -ltra
+  632  cd ../cornjobs/
+  633  ls
+  634  cat mailback.sh 
+  635  cd -
+  636  ls
+  637  find .  -mtime +3
+  638  find .  -mtime +2
+  639  find .  -mtime +3
+  640  find .  -mtime +1
+  641  find .  -mtime +0
+  642  find .  -mtime -1
+  643  find .  -mtime -2
+  644  find .  -mtime -3
+  645  find .  -mtime -4
+  646  find .  -mtime 3
+  647  certbot
+  648  sudo su
+  649  kubectl get pods
+  650  kubectl stop 
+  651  ls
+  652  cat ./local-bizInv-app.yml
+  653  kubectl delete -f ./local-bizInv-app.yml 
+  654  nginx 
+  655  sudo su
+  656  kubectl create -f ./local-bizInv-app.yml 
+  657  kubectl get pods
+  658  nginx stop
+  659  nginx status
+  660  nginx --help
+  661  nginx -help
+  662  nginx -h
+  663  nignx
+  664  sudo su
+  665  kubectl 
+  666  kubectl logs bizinv-app-deployment-86b4dd4df7-f97lb
+  667  kubectl delete -f ./local-bizInv-app.yml 
+  668  ls
+  669  kubectl get pods
+  670  sudo su
+  671  ls
+  672  kubectl create -f ./local-bizInv-app.yml 
+  673  kubectl get pods
+  674  cd /data/app/configs/
+  675  ls
+  676  kubectl delete -f ./local-bizInv-app.yml 
+  677  sudo su
+  678  kubectl create -f ./local-bizInv-app.yml 
+  679  kubectl get pods
+  680  cat ./local-bizInv-app.yml 
+  681  cat /etc/letsencrypt/
+  682  cd /etc/letsencrypt/
+  683  ls
+  684  ls -ltra
+  685  date
+  686  cd renewal
+  687  ls
+  688  ls -ltra
+  689  cat options-ssl-nginx.conf
+  690  cd //
+  691  cd -
+  692  cat options-ssl-nginx.conf
+  693  cat ./options-ssl-nginx.conf
+  694  cat ../options-ssl-nginx.conf
+  695  ls
+  696  cd /etc/nginx
+  697  ls
+  698  cat nginx.conf
+  699  ls
+  700  cat nginx.conf.default 
+  701  cat options-ssl-nginx.conf
+  702  cat nginx.conf
+  703  ls
+  704  cd ../
+  705  cd /data/app/frontend/
+  706  ls
+  707  cd nginx/
+  708  ls
+  709  cd config/
+  710  ls
+  711  cat nginx.conf
+  712  cd ../../
+  713  ls
+  714   cd../
+  715  cd ../
+  716  ls
+  717  cd configs/
+  718  ls
+  719  cat local-bizInv-app.yml 
+  720   cd../
+  721  cd /data/app/frontend/nginx/
+  722  ls
+  723  vi config/nginx.conf
+  724  cd ../
+  725  cd /data/app/configs/
+  726  ls
+  727  kubectl delete -f ./local-bizInv-app.yml 
+  728  kubectl create -f ./local-bizInv-app.yml 
+  729  kubectl get pods
+  730  certbot --help
+  731  locate acme.sh
+  732  ls
+  733  cd getssl
+  734  ./getssl 
+  735  certbot 
+  736  sudo su
+  737  kubectl get pods
+  738  ls
+  739  view history20211120.txt 
+  740  view portfwddb 
+  741  view terminal-spool.19Oct2021.txt 
+  742  minikube status
+  743  minikube version
+  744  cd /etc/systemd/system/
+  745  ls
+  746  cat kubelet.service.d/
+  747  cd kubelet.service.d/
+  748  ls
+  749  cat 10-kubeadm.conf 
+  750  cat /etc/kubernetes/bootstrap-kubelet.conf
+  751  cat /var/lib/kubelet/config.yaml
+  752  sudo /var/lib/kubelet/config.yaml
+  753  sudo cat /var/lib/kubelet/config.yaml
+  754  kubectl get pods
+  755  cd /data/app/configs/
+  756  sudo systemctl status nginx
+  757  kubectl delete -f ./local-bizInv-app.yml
+  758  sudo systemctl start nginx
+  759  sudo systemctl status nginx
+  760  certbot --force-renewal -d myezbar.ml,api.myezbar.ml 
+  761  sudo su
+  762   kubectl create -f ./local-bizInv-app.yml 
+  763  kubectl get pods
+  764  cd /etc/nginx
+  765  ls
+  766  cat nginx.conf
+  767  exit
+  768  kubectl get pods
+  769  kubectl 
+  770  kubectl list
+  771  kubectl get 
+  772  kubectl get pods
+  773  cat /etc/kubernetes/pki/apiserver.crt
+  774  ps -ef | grep 
+  775  ps -ef | grep kube
+  776  ls
+  777  cd ~
+  778  ls
+  779  cat history20211120.txt 
+  780  minikube  service --all
+  781  minikube  service
+  782   minikube  service bizinv-app
+  783  minikube logs
+  784  minikube ssh
+  785  cd var/lib/minikube/certs
+  786  cd /var/lib/minikube/certs
+  787  ls
+  788  sudo /var/lib/minikube/binaries/v1.20.5/kubeadm certs check-expiration --cert-dir /var/lib/minikube/certs/
+  789  sudo /var/lib/minikube/binaries/v1.22.2/kubeadm certs check-expiration --cert-dir /var/lib/minikube/certs/
+  790  ls
+  791  ls -ltra
+  792  corntab
+  793  crontab
+  794  crontab --h
+  795  crontab -l
+  796  cat /data/app/cornjobs/mailback.sh
+  797  cd /data
+  798  ls
+  799  cd app/backup/
+  800  ls
+  801  date=`date "+%Y-%d-%m"`
+  802  backupfolder="/data/app/backup"
+  803  sqlfile=$backupfolder/all-database-19-11-2022.sql 
+  804  zipfile=$backupfolder/all-database-19-11-2022.zip 
+  805  echo "backup file attached" | mail -s "DataBackup - $date" -a $zipfile 3weitsolutions@gmail.com
+  806  mail -s "Darshan Puttaswamy" 3weitsolutions@gmail.com
+  807  echo "this is a test email"| mail -s "Darshan Puttaswamy" 3weitsolutions@gmail.com
+  808  view all-database-19-11-2022.sql
+  809  echo "backup file attached" | mail -s "DataBackup - $date" -a $zipfile darshanputtaswamy@gmail.com
+  810  echo $1;
+  811  echo $1
+  812  ls
+  813  clear
+  814  ls
+  815  grep 'EMAIL ID' /var/log/exim_mainlog
+  816  view /var/log/messages
+  817  view /var/log/messages-20221120 
+  818  sudo su 
+  819  mysql 
+  820  kubectl get pods
+  821  cd /var/lib/minikube/certs
+  822  ll
+  823  cd etcd/
+  824  ls
+  825  cp -r /var/lib/minikube/certs /var/lib/minikube/certs.back
+  826  sudo su
+  827  kubectl get pods
+  828  kubectl get svc
+  829  sudo /var/lib/minikube/binaries/v1.22.2/kubeadm certs check-expiration --cert-dir /var/lib/minikube/certs/ 
+  830  sudo /var/lib/minikube/binaries/v1.22.2/kubeadm certs check-expiration --cert-dir /var/lib/minikube/certs/
+  831  sudo /var/lib/minikube/binaries/v1.22.2/kubeadm certs renew apiserver --cert-dir /var/lib/minikube/certs/
+  832  sudo /var/lib/minikube/binaries/v1.22.2/kubeadm certs renew apiserver-etc-client --cert-dir /var/lib/minikube/certs/
+  833  sudo /var/lib/minikube/binaries/v1.22.2/kubeadm certs renew apiserver-kubelet-client --cert-dir /var/lib/minikube/certs/
+  834  sudo /var/lib/minikube/binaries/v1.22.2/kubeadm certs renew etcd-healthcheck-client --cert-dir /var/lib/minikube/certs/
+  835  sudo /var/lib/minikube/binaries/v1.22.2/kubeadm certs check-expiration --cert-dir /var/lib/minikube/certs/
+  836  sudo /var/lib/minikube/binaries/v1.22.2/kubeadm certs renew etcd-peer --cert-dir /var/lib/minikube/certs/
+  837  sudo /var/lib/minikube/binaries/v1.22.2/kubeadm certs renew etcd-server --cert-dir /var/lib/minikube/certs/  
+  838  sudo /var/lib/minikube/binaries/v1.22.2/kubeadm certs renew front-proxy-client --cert-dir /var/lib/minikube/certs/
+  839  sudo /var/lib/minikube/binaries/v1.22.2/kubeadm certs check-expiration --cert-dir /var/lib/minikube/certs/ 
+  840  kubectl get pods
+  841  rm -rf ~/.kube/http-cache/*
+  842  kubectl get pods
+  843  kubectl ssh
+  844  minikube ssh
+  845  cd ~/.kube
+  846  ls
+  847  cat config 
+  848  ll /home/opc/.minikube/profiles/minikube/*
+  849  ll /home/opc/.minikube/*
+  850  sudo /var/lib/minikube/binaries/v1.22.2/kubeadm alpha certs renew all --cert-dir /var/lib/minikube/certs/ 
+  851  sudo /var/lib/minikube/binaries/v1.22.2/kubeadm certs renew all --cert-dir /var/lib/minikube/certs/ 
+  852  sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+  853  ll
+  854  kubectl get pods
+  855  kubectl get svc
+  856  kubectl get svc --all
+  857  kubectl get svc --h
+  858  kubectl get svc --help
+  859  kubectl get svc -A
+  860  minikube status
+  861  minikube stop
+  862  minikube status
+  863  minikube stop
+  864  minikube start
+  865  minikube stop
+  866  minikube start driver=None
+  867  minikube stop
+  868  minikube start --driver=none
+  869  kubectl get pods
+  870  cd /data/app/configs/
+  871  ls
+  872   kubectl create -f ./local-pv01.yml 
+  873  minikube stop
+  874  rm -rf /home/minikube/.minikube
+  875  minikube start --driver=none
+  876  cd /var/lib/minikube/
+  877  ls
+  878  cd certs
+  879  ls
+  880  rm -rf *
+  881  sudo rm -rf *
+  882  ls
+  883  cd ../
+  884  rmdir certs
+  885  sudo rmdir certs
+  886  minikube stop -force
+  887  minikube stop --force
+  888  minikube stop
+  889  minikube start --vm-driver=none
+  890  minikube stop 
+  891  ps -ef | egrep kube
+  892  ps -ef | egrep minikube
+  893  ps -ef | grep 
+  894  ps -ef 
+  895  minikube delete
+  896  minikube start --driver=none
+  897  kubectl get pods
+  898  cd /data/app/co
+  899  cd /data/app/configs/
+  900  ls
+  901  cd ~
+  902  ls
+  903  view history20211120.txt 
+  904  cat history20211120.txt 
+  905  cd /data/app/configs/
+  906   kubectl create -f ./local-pvc01.yml
+  907   kubectl create -f ./local-pv01.yml
+  908   kubectl delete -f ./local-pvc01.yml
+  909   kubectl create -f ./local-pvc01.yml
+  910  kubectl create -f ./local-pvc01.yml
+  911  kubectl create -f ./local-mysql.yml
+  912  kubectl get pods
+  913  kubectl create -f ./local-bizInv-apiserver.yml
+  914  kubectl get pods
+  915  ls
+  916  kubectl create -f ./local-bizInv-cache.yml 
+  917  kubectl get pods
+  918   kubectl exec -it  bizinv-db-74477cc59c-vpw5p /bin/bash
+  919  kubectl get pods
+  920   kubectl exec -it  bizinv-apiserver-deployment-5f65c6674c-9fmf9 /bin/bash
+  921  kubectl get pods
+  922  kubectl get svc
+  923   kubectl exec -it  bizinv-apiserver-deployment-5f65c6674c-9fmf9 /bin/bash
+  924  ls
+  925  cd ~
+  926  ls
+  927  view terminal-spool.19Oct2021.txt 
+  928  locate history
+  929   kubectl exec -it  bizinv-apiserver-deployment-5f65
+  930  kubectl get svc
+  931  sudo firewall-cmd --state
+  932   sudo firewall-cmd --list-all
+  933   kubectl exec -it  bizinv-db-74477cc59c-vpw5p /bin/bash
+  934  kubectl get svc
+  935  kubectl get pods
+  936  kubectl port-forward pods/bizinv-db-74477cc59c-vpw5p 3306:3306
+  937  kubectl port-forward pods/bizinv-db-74477cc59c-vpw5p 0.0.0.0:3306:3306
+  938  kubectl port-forward pods/bizinv-db-74477cc59c-vpw5p 3306:0.0.0.0:3306
+  939  ls
+  940  cd /data/app/configs/
+  941  ls
+  942  kubectl create -f ./local-bizInv-app.yml
+  943  kubectl create -f ./local-bizInv-frontendserver.yml 
+  944  kubectl get pods
+  945  kubectl port-forward pods/bizinv-db-74477cc59c-vpw5p 0.0.0.0:3306:3306
+  946  kubectl port-forward pods/bizinv-db-74477cc59c-vpw5p 3306:0.0.0.0:3306
+  947  cd /data/app/
+  948  ls
+  949  cd backup/
+  950  ls
+  951  cornjob --list
+  952  cronjob --list
+  953  cronjob
+  954  crontab -l
+  955  cat /data/app/cornjobs/mailback.sh
+  956  kubectl get pods
+  957  kubectl get pods | grep bizinv-db 
+  958  kubectl get pods | grep bizinv-db | cut 
+  959  cut --help
+  960  kubectl get pods | grep bizinv-db | cut -f1
+  961  kubectl get pods | grep bizinv-db | cut -d -f1
+  962  kubectl get pods | grep bizinv-db | cut -d'\s' -f1
+  963  kubectl get pods | grep bizinv-db | cut -d' ' -f1
+  964  kubectl get pods | grep bizinv-db | cut -d' ' -f1 |tr
+  965  kubectl get pods | grep bizinv-db | cut -d' ' -f1 | trim
+  966  kubectl get pods | grep bizinv-db | cut -d' ' -f1 
+  967  bizInvDB=`minikube kubectl -- get pods | grep bizinv-db | cut -d' ' -f1`
+  968  echo $bizInvDB
+  969  minikube kubectl -- exec -it $bizInvDB -- bash /var/script/backupBizInvDB.sh
+  970  ls
+  971  vi /data/app/cornjobs/mailback.sh
+  972  /data/app/cornjobs/mailback.sh
+  973  cdls
+  974  ls
+  975  view /var/script/backupBizInvDB.sh
+  976  minikube kubectl -- exec -it $bizInvDB -- bash
+  977  exit
+  978  kubectl get pods
+  979  cd /data/app/co
+  980  cd /data/app/configs/
+  981  ls
+  982  view local-bizInv-frontendserver.yml 
+  983  view local-bizInv-app.yml 
+  984  docker-compose build biz-inventory-app 
+  985  cat local-bizInv-frontendserver.yml 
+  986  exit
+  987  kubectl get pods
+  988  minikube kubectl -- exec -it bizinv-frontendserver-deployment-5c47947b79-hs8gz -- bash
+  989  kubectl get pods
+  990  minikube kubectl -- exec -it bizinv-frontendserver-deployment-5c47947b79-hs8gz --bash
+  991  minikube kubectl -- exec -it bizinv-frontendserver-deployment-5c47947b79-hs8gz 
+  992  minikube kubectl -- exec -it bizinv-frontendserver-deployment-5c47947b79-hs8gz bash
+  993  minikube kubectl -- exec -it bizinv-frontendserver-deployment-5c47947b79-hs8gz sh
+  994  exit
+  995  minikube kubectl -- exec -it bizinv-frontendserver-deployment-5c47947b79-hs8gz sh
+  996  exit
+  997  kubectl get pods
+  998  df -h
+  999  cd /data/app/backup/
+ 1000  ls
+ 1001  kubectl log bizinv-db-74477cc59c-vpw5p
+ 1002  kubectl logs bizinv-db-74477cc59c-vpw5p
+ 1003  cd ../configs/
+ 1004  ls
+ 1005  cd ..
+ 1006  ls
+ 1007  mkdir history
+ 1008  cd history/
+ 1009  history > history.txt

@@ -1,0 +1,941 @@
+[opc@vp-master-node app]$ sudo yum install docker
+Loaded plugins: langpacks, ulninfo
+Resolving Dependencies
+--> Running transaction check
+---> Package docker-engine.aarch64 0:19.03.11.ol-13.el7 will be installed
+--> Processing Dependency: runc >= 3:1.0.0-1.rc95 for package: docker-engine-19.03.11.ol-13.el7.aarch64
+--> Processing Dependency: containerd >= 1.4.8 for package: docker-engine-19.03.11.ol-13.el7.aarch64
+--> Processing Dependency: container-selinux >= 2:2.77 for package: docker-engine-19.03.11.ol-13.el7.aarch64
+--> Processing Dependency: docker-cli for package: docker-engine-19.03.11.ol-13.el7.aarch64
+--> Running transaction check
+---> Package container-selinux.noarch 2:2.119.2-1.911c772.el7_8 will be installed
+---> Package containerd.aarch64 0:1.4.8-1.el7 will be installed
+---> Package docker-cli.aarch64 0:19.03.11.ol-13.el7 will be installed
+---> Package runc.aarch64 3:1.0.0-1.rc95.el7 will be installed
+--> Processing Dependency: criu for package: 3:runc-1.0.0-1.rc95.el7.aarch64
+--> Running transaction check
+---> Package criu.aarch64 0:3.12-2.el7 will be installed
+--> Processing Dependency: libprotobuf-c.so.1(LIBPROTOBUF_C_1.0.0)(64bit) for package: criu-3.12-2.el7.aarch64
+--> Processing Dependency: libnet.so.1()(64bit) for package: criu-3.12-2.el7.aarch64
+--> Processing Dependency: libprotobuf-c.so.1()(64bit) for package: criu-3.12-2.el7.aarch64
+--> Running transaction check
+---> Package libnet.aarch64 0:1.1.6-7.el7 will be installed
+---> Package protobuf-c.aarch64 0:1.0.2-3.el7 will be installed
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+=========================================================================================================================================================================== Package                                  Arch                           Version                                             Repository                               Size 
+===========================================================================================================================================================================Installing:
+ docker-engine                            aarch64                        19.03.11.ol-13.el7                                  ol7_oci_included                         14 M 
+Installing for dependencies:
+ container-selinux                        noarch                         2:2.119.2-1.911c772.el7_8                           ol7_oci_included                         39 k 
+ containerd                               aarch64                        1.4.8-1.el7                                         ol7_oci_included                         22 M 
+ criu                                     aarch64                        3.12-2.el7                                          ol7_latest                              430 k 
+ docker-cli                               aarch64                        19.03.11.ol-13.el7                                  ol7_oci_included                         21 M 
+ libnet                                   aarch64                        1.1.6-7.el7                                         ol7_latest                               56 k 
+ protobuf-c                               aarch64                        1.0.2-3.el7                                         ol7_latest                               27 k 
+ runc                                     aarch64                        3:1.0.0-1.rc95.el7                                  ol7_oci_included                        2.7 M 
+
+Transaction Summary
+===========================================================================================================================================================================Install  1 Package (+7 Dependent packages)
+
+Total download size: 60 M
+Installed size: 276 M
+Is this ok [y/d/N]: y
+Downloading packages:
+(1/8): container-selinux-2.119.2-1.911c772.el7_8.noarch.rpm                                                                                         |  39 kB  00:00:00     
+(2/8): criu-3.12-2.el7.aarch64.rpm                                                                                                                  | 430 kB  00:00:00     
+(3/8): containerd-1.4.8-1.el7.aarch64.rpm                                                                                                           |  22 MB  00:00:01     
+(4/8): docker-cli-19.03.11.ol-13.el7.aarch64.rpm                                                                                                    |  21 MB  00:00:01     
+(5/8): protobuf-c-1.0.2-3.el7.aarch64.rpm                                                                                                           |  27 kB  00:00:00     
+(6/8): runc-1.0.0-1.rc95.el7.aarch64.rpm                                                                                                            | 2.7 MB  00:00:00     
+(7/8): libnet-1.1.6-7.el7.aarch64.rpm                                                                                                               |  56 kB  00:00:00     
+(8/8): docker-engine-19.03.11.ol-13.el7.aarch64.rpm                                                                                                 |  14 MB  00:00:00     
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------Total                                                                                                                                       29 MB/s |  60 MB  00:00:02     
+Running transaction check
+Running transaction test
+Transaction test succeeded
+Running transaction
+  Installing : 2:container-selinux-2.119.2-1.911c772.el7_8.noarch                                                                                                      1/8 
+  Installing : containerd-1.4.8-1.el7.aarch64                                                                                                                          2/8 
+  Installing : protobuf-c-1.0.2-3.el7.aarch64                                                                                                                          3/8 
+  Installing : libnet-1.1.6-7.el7.aarch64                                                                                                                              4/8 
+  Installing : criu-3.12-2.el7.aarch64                                                                                                                                 5/8 
+  Installing : 3:runc-1.0.0-1.rc95.el7.aarch64                                                                                                                         6/8 
+  Installing : docker-cli-19.03.11.ol-13.el7.aarch64                                                                                                                   7/8 
+  Installing : docker-engine-19.03.11.ol-13.el7.aarch64                                                                                                                8/8 
+xfs_info: cannot open /var/lib: Is a directory
+  Verifying  : containerd-1.4.8-1.el7.aarch64                                                                                                                          1/8 
+  Verifying  : docker-cli-19.03.11.ol-13.el7.aarch64                                                                                                                   2/8 
+  Verifying  : docker-engine-19.03.11.ol-13.el7.aarch64                                                                                                                3/8 
+  Verifying  : 2:container-selinux-2.119.2-1.911c772.el7_8.noarch                                                                                                      4/8 
+  Verifying  : criu-3.12-2.el7.aarch64                                                                                                                                 5/8 
+  Verifying  : 3:runc-1.0.0-1.rc95.el7.aarch64                                                                                                                         6/8 
+  Verifying  : libnet-1.1.6-7.el7.aarch64                                                                                                                              7/8 
+  Verifying  : protobuf-c-1.0.2-3.el7.aarch64                                                                                                                          8/8 
+
+Installed:
+  docker-engine.aarch64 0:19.03.11.ol-13.el7
+
+Dependency Installed:
+  container-selinux.noarch 2:2.119.2-1.911c772.el7_8    containerd.aarch64 0:1.4.8-1.el7    criu.aarch64 0:3.12-2.el7          docker-cli.aarch64 0:19.03.11.ol-13.el7     
+  libnet.aarch64 0:1.1.6-7.el7                          protobuf-c.aarch64 0:1.0.2-3.el7    runc.aarch64 3:1.0.0-1.rc95.el7
+
+Complete!
+[opc@vp-master-node app]$ df 0h
+df: ‘0h’: No such file or directory
+[opc@vp-master-node app]$ df -h
+Filesystem      Size  Used Avail Use% Mounted on
+devtmpfs         12G     0   12G   0% /dev
+tmpfs            12G     0   12G   0% /dev/shm
+tmpfs            12G   27M   12G   1% /run
+tmpfs            12G     0   12G   0% /sys/fs/cgroup
+/dev/sda3        39G  4.2G   35G  11% /
+/dev/sda1       200M  7.9M  192M   4% /boot/efi
+/dev/sdb1       147G   60M  140G   1% /data
+tmpfs           2.3G     0  2.3G   0% /run/user/0
+tmpfs           2.3G     0  2.3G   0% /run/user/994
+tmpfs           2.3G     0  2.3G   0% /run/user/1000
+[opc@vp-master-node app]$ minikube start
+���  minikube v1.23.2 on Oracle 7.9 (arm64)
+���  Unable to pick a default driver. Here is what was considered, in preference order:
+    ▪ docker: Not healthy: "docker version --format {{.Server.Os}}-{{.Server.Version}}" exit status 1: Cannot connect to the Docker daemon at unix:///var/run/docker.sock. 
+Is the docker daemon running?
+    ▪ docker: Suggestion: Start the Docker service <https://minikube.sigs.k8s.io/docs/drivers/docker/>
+    ▪ kvm2: Not installed: exec: "virsh": executable file not found in $PATH
+    ▪ podman: Not installed: exec: "podman": executable file not found in $PATH
+    ▪ vmware: Not installed: exec: "docker-machine-driver-vmware": executable file not found in $PATH
+    ▪ virtualbox: Not installed: unable to find VBoxManage in $PATH
+
+❌  Exiting due to DRV_DOCKER_NOT_RUNNING: Found docker, but the docker service isn't running. Try restarting the docker service.
+
+[opc@vp-master-node app]$ docker
+
+Usage:  docker [OPTIONS] COMMAND
+
+A self-sufficient runtime for containers
+
+Options:
+      --config string      Location of client config files (default "/home/opc/.docker")
+  -c, --context string     Name of the context to use to connect to the daemon (overrides DOCKER_HOST env var and default context set with "docker context use")
+  -D, --debug              Enable debug mode
+  -H, --host list          Daemon socket(s) to connect to
+  -l, --log-level string   Set the logging level ("debug"|"info"|"warn"|"error"|"fatal") (default "info")
+      --tls                Use TLS; implied by --tlsverify
+      --tlscacert string   Trust certs signed only by this CA (default "/home/opc/.docker/ca.pem")
+      --tlscert string     Path to TLS certificate file (default "/home/opc/.docker/cert.pem")
+      --tlskey string      Path to TLS key file (default "/home/opc/.docker/key.pem")
+      --tlsverify          Use TLS and verify the remote
+  -v, --version            Print version information and quit
+
+Management Commands:
+  builder     Manage builds
+  config      Manage Docker configs
+  container   Manage containers
+  context     Manage contexts
+  engine      Manage the docker engine
+  image       Manage images
+  network     Manage networks
+  node        Manage Swarm nodes
+  plugin      Manage plugins
+  secret      Manage Docker secrets
+  service     Manage services
+  stack       Manage Docker stacks
+  swarm       Manage Swarm
+  system      Manage Docker
+  trust       Manage trust on Docker images
+  volume      Manage volumes
+
+Commands:
+  attach      Attach local standard input, output, and error streams to a running container
+  build       Build an image from a Dockerfile
+  commit      Create a new image from a container's changes
+  cp          Copy files/folders between a container and the local filesystem
+  create      Create a new container
+  deploy      Deploy a new stack or update an existing stack
+  diff        Inspect changes to files or directories on a container's filesystem
+  events      Get real time events from the server
+  exec        Run a command in a running container
+  export      Export a container's filesystem as a tar archive
+  history     Show the history of an image
+  images      List images
+  import      Import the contents from a tarball to create a filesystem image
+  info        Display system-wide information
+  inspect     Return low-level information on Docker objects
+  kill        Kill one or more running containers
+  load        Load an image from a tar archive or STDIN
+  login       Log in to a Docker registry
+  logout      Log out from a Docker registry
+  logs        Fetch the logs of a container
+  pause       Pause all processes within one or more containers
+  port        List port mappings or a specific mapping for the container
+  ps          List containers
+  pull        Pull an image or a repository from a registry
+  push        Push an image or a repository to a registry
+  rename      Rename a container
+  restart     Restart one or more containers
+  rm          Remove one or more containers
+  rmi         Remove one or more images
+  run         Run a command in a new container
+  save        Save one or more images to a tar archive (streamed to STDOUT by default)
+  search      Search the Docker Hub for images
+  start       Start one or more stopped containers
+  stats       Display a live stream of container(s) resource usage statistics
+  stop        Stop one or more running containers
+  tag         Create a tag TARGET_IMAGE that refers to SOURCE_IMAGE
+  top         Display the running processes of a container
+  unpause     Unpause all processes within one or more containers
+  update      Update configuration of one or more containers
+  version     Show the Docker version information
+  wait        Block until one or more containers stop, then print their exit codes
+
+Run 'docker COMMAND --help' for more information on a command.
+[opc@vp-master-node app]$ minikube start
+���  minikube v1.23.2 on Oracle 7.9 (arm64)
+��  Unable to pick a default driver. Here is what was considered, in preference order:
+    ▪ docker: Not healthy: "docker version --format {{.Server.Os}}-{{.Server.Version}}" exit status 1: Cannot connect to the Docker daemon at unix:///var/run/docker.sock. 
+Is the docker daemon running?
+    ▪ docker: Suggestion: Start the Docker service <https://minikube.sigs.k8s.io/docs/drivers/docker/>
+    ▪ kvm2: Not installed: exec: "virsh": executable file not found in $PATH
+    ▪ podman: Not installed: exec: "podman": executable file not found in $PATH
+    ▪ vmware: Not installed: exec: "docker-machine-driver-vmware": executable file not found in $PATH
+    ▪ virtualbox: Not installed: unable to find VBoxManage in $PATH
+
+❌  Exiting due to DRV_DOCKER_NOT_RUNNING: Found docker, but the docker service isn't running. Try restarting the docker service.
+
+[opc@vp-master-node app]$ docker version --format {{.Server.Os}}-{{.Server.Version}}
+
+Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?
+[opc@vp-master-node app]$ sudo systemctl unmask docker
+[opc@vp-master-node app]$ sudo systemctl start docker
+[opc@vp-master-node app]$ sudo systemctl status docker
+● docker.service - Docker Application Container Engine
+   Loaded: loaded (/usr/lib/systemd/system/docker.service; disabled; vendor preset: disabled)
+   Active: active (running) since Tue 2021-10-19 17:21:56 GMT; 6s ago
+     Docs: https://docs.docker.com
+ Main PID: 16187 (dockerd)
+    Tasks: 10
+   Memory: 37.6M
+   CGroup: /system.slice/docker.service
+           └─16187 /usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock
+
+Oct 19 17:21:55 vp-master-node dockerd[16187]: time="2021-10-19T17:21:55.949339487Z" level=warning msg="Your kernel does not support cgroup blkio weight"
+Oct 19 17:21:55 vp-master-node dockerd[16187]: time="2021-10-19T17:21:55.949370687Z" level=warning msg="Your kernel does not support cgroup blkio weight_device"
+Oct 19 17:21:55 vp-master-node dockerd[16187]: time="2021-10-19T17:21:55.949892211Z" level=info msg="Loading containers: start."
+Oct 19 17:21:56 vp-master-node dockerd[16187]: time="2021-10-19T17:21:56.210513247Z" level=info msg="Default bridge (docker0) is assigned with an IP address 1...P address"Oct 19 17:21:56 vp-master-node dockerd[16187]: time="2021-10-19T17:21:56.366496987Z" level=info msg="Loading containers: done."
+Oct 19 17:21:56 vp-master-node dockerd[16187]: time="2021-10-19T17:21:56.406793320Z" level=warning msg="Not using native diff for overlay2, this may cause deg...r=overlay2Oct 19 17:21:56 vp-master-node dockerd[16187]: time="2021-10-19T17:21:56.407294123Z" level=info msg="Docker daemon" commit=9bb540d graphdriver(s)=overlay2 ver...9.03.11-olOct 19 17:21:56 vp-master-node dockerd[16187]: time="2021-10-19T17:21:56.407595645Z" level=info msg="Daemon has completed initialization"
+Oct 19 17:21:56 vp-master-node dockerd[16187]: time="2021-10-19T17:21:56.454381659Z" level=info msg="API listen on /var/run/docker.sock"
+Oct 19 17:21:56 vp-master-node systemd[1]: Started Docker Application Container Engine.
+Hint: Some lines were ellipsized, use -l to show in full.
+[opc@vp-master-node app]$ minikube start
+���  minikube v1.23.2 on Oracle 7.9 (arm64)
+���  Unable to pick a default driver. Here is what was considered, in preference order:
+    ▪ docker: Not healthy: "docker version --format {{.Server.Os}}-{{.Server.Version}}" exit status 1: Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.40/version": dial unix /var/run/docker.sock: connect: permission denied
+    ▪ docker: Suggestion: Add your user to the 'docker' group: 'sudo usermod -aG docker $USER && newgrp docker' <https://docs.docker.com/engine/install/linux-postinstall/>    ▪ kvm2: Not installed: exec: "virsh": executable file not found in $PATH
+    ▪ podman: Not installed: exec: "podman": executable file not found in $PATH
+    ▪ vmware: Not installed: exec: "docker-machine-driver-vmware": executable file not found in $PATH
+    ▪ virtualbox: Not installed: unable to find VBoxManage in $PATH
+
+❌  Exiting due to DRV_NOT_HEALTHY: Found driver(s) but none were healthy. See above for suggestions how to fix installed drivers.
+
+[opc@vp-master-node app]$ sudo systemctl mask docker
+Created symlink from /etc/systemd/system/docker.service to /dev/null.
+[opc@vp-master-node app]$ sudo systemctl status docker
+● docker.service
+   Loaded: masked (/dev/null; bad)
+   Active: active (running) since Tue 2021-10-19 17:21:56 GMT; 55s ago
+ Main PID: 16187 (dockerd)
+   CGroup: /system.slice/docker.service
+           └─16187 /usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock
+
+Oct 19 17:21:55 vp-master-node dockerd[16187]: time="2021-10-19T17:21:55.949370687Z" level=warning msg="Your kernel does not support cgroup blkio weight_device"
+Oct 19 17:21:55 vp-master-node dockerd[16187]: time="2021-10-19T17:21:55.949892211Z" level=info msg="Loading containers: start."
+Oct 19 17:21:56 vp-master-node dockerd[16187]: time="2021-10-19T17:21:56.210513247Z" level=info msg="Default bridge (docker0) is assigned with an IP address 1...P address"Oct 19 17:21:56 vp-master-node dockerd[16187]: time="2021-10-19T17:21:56.366496987Z" level=info msg="Loading containers: done."
+Oct 19 17:21:56 vp-master-node dockerd[16187]: time="2021-10-19T17:21:56.406793320Z" level=warning msg="Not using native diff for overlay2, this may cause deg...r=overlay2Oct 19 17:21:56 vp-master-node dockerd[16187]: time="2021-10-19T17:21:56.407294123Z" level=info msg="Docker daemon" commit=9bb540d graphdriver(s)=overlay2 ver...9.03.11-olOct 19 17:21:56 vp-master-node dockerd[16187]: time="2021-10-19T17:21:56.407595645Z" level=info msg="Daemon has completed initialization"
+Oct 19 17:21:56 vp-master-node dockerd[16187]: time="2021-10-19T17:21:56.454381659Z" level=info msg="API listen on /var/run/docker.sock"
+Oct 19 17:21:56 vp-master-node systemd[1]: Started Docker Application Container Engine.
+Oct 19 17:22:43 vp-master-node systemd[1]: Current command vanished from the unit file, execution of the command list won't be resumed.
+Hint: Some lines were ellipsized, use -l to show in full.
+[opc@vp-master-node app]$ sudo systemctl stop docker
+[opc@vp-master-node app]$ sudo systemctl start docker
+Failed to start docker.service: Unit is masked.
+[opc@vp-master-node app]$ sudo systemctl unmask docker
+Removed symlink /etc/systemd/system/docker.service.
+[opc@vp-master-node app]$ sudo systemctl start docker
+[opc@vp-master-node app]$ sudo systemctl status docker
+● docker.service - Docker Application Container Engine
+   Loaded: loaded (/usr/lib/systemd/system/docker.service; disabled; vendor preset: disabled)
+   Active: active (running) since Tue 2021-10-19 17:23:34 GMT; 4s ago
+     Docs: https://docs.docker.com
+ Main PID: 16939 (dockerd)
+    Tasks: 10
+   Memory: 34.9M
+   CGroup: /system.slice/docker.service
+           └─16939 /usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock
+
+Oct 19 17:23:33 vp-master-node dockerd[16939]: time="2021-10-19T17:23:33.543108755Z" level=warning msg="Your kernel does not support cgroup blkio weight"
+Oct 19 17:23:33 vp-master-node dockerd[16939]: time="2021-10-19T17:23:33.543131915Z" level=warning msg="Your kernel does not support cgroup blkio weight_device"
+Oct 19 17:23:33 vp-master-node dockerd[16939]: time="2021-10-19T17:23:33.543259036Z" level=info msg="Loading containers: start."
+Oct 19 17:23:33 vp-master-node dockerd[16939]: time="2021-10-19T17:23:33.876746120Z" level=info msg="Default bridge (docker0) is assigned with an IP address 1...P address"Oct 19 17:23:34 vp-master-node dockerd[16939]: time="2021-10-19T17:23:34.014107778Z" level=info msg="Loading containers: done."
+Oct 19 17:23:34 vp-master-node dockerd[16939]: time="2021-10-19T17:23:34.037049762Z" level=warning msg="Not using native diff for overlay2, this may cause deg...r=overlay2Oct 19 17:23:34 vp-master-node dockerd[16939]: time="2021-10-19T17:23:34.037241403Z" level=info msg="Docker daemon" commit=9bb540d graphdriver(s)=overlay2 ver...9.03.11-olOct 19 17:23:34 vp-master-node dockerd[16939]: time="2021-10-19T17:23:34.037275003Z" level=info msg="Daemon has completed initialization"
+Oct 19 17:23:34 vp-master-node dockerd[16939]: time="2021-10-19T17:23:34.063195925Z" level=info msg="API listen on /var/run/docker.sock"
+Oct 19 17:23:34 vp-master-node systemd[1]: Started Docker Application Container Engine.
+Hint: Some lines were ellipsized, use -l to show in full.
+[opc@vp-master-node app]$ sudo systemctl status docker -l
+● docker.service - Docker Application Container Engine
+   Loaded: loaded (/usr/lib/systemd/system/docker.service; disabled; vendor preset: disabled)
+   Active: active (running) since Tue 2021-10-19 17:23:34 GMT; 19s ago
+     Docs: https://docs.docker.com
+ Main PID: 16939 (dockerd)
+    Tasks: 10
+   Memory: 34.9M
+   CGroup: /system.slice/docker.service
+           └─16939 /usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock
+
+Oct 19 17:23:33 vp-master-node dockerd[16939]: time="2021-10-19T17:23:33.543108755Z" level=warning msg="Your kernel does not support cgroup blkio weight"
+Oct 19 17:23:33 vp-master-node dockerd[16939]: time="2021-10-19T17:23:33.543131915Z" level=warning msg="Your kernel does not support cgroup blkio weight_device"
+Oct 19 17:23:33 vp-master-node dockerd[16939]: time="2021-10-19T17:23:33.543259036Z" level=info msg="Loading containers: start."
+Oct 19 17:23:33 vp-master-node dockerd[16939]: time="2021-10-19T17:23:33.876746120Z" level=info msg="Default bridge (docker0) is assigned with an IP address 172.17.0.0/16. Daemon option --bip can be used to set a preferred IP address"
+Oct 19 17:23:34 vp-master-node dockerd[16939]: time="2021-10-19T17:23:34.014107778Z" level=info msg="Loading containers: done."
+Oct 19 17:23:34 vp-master-node dockerd[16939]: time="2021-10-19T17:23:34.037049762Z" level=warning msg="Not using native diff for overlay2, this may cause degraded performance for building images: kernel has CONFIG_OVERLAY_FS_REDIRECT_DIR enabled" storage-driver=overlay2
+Oct 19 17:23:34 vp-master-node dockerd[16939]: time="2021-10-19T17:23:34.037241403Z" level=info msg="Docker daemon" commit=9bb540d graphdriver(s)=overlay2 version=19.03.11-ol
+Oct 19 17:23:34 vp-master-node dockerd[16939]: time="2021-10-19T17:23:34.037275003Z" level=info msg="Daemon has completed initialization"
+Oct 19 17:23:34 vp-master-node dockerd[16939]: time="2021-10-19T17:23:34.063195925Z" level=info msg="API listen on /var/run/docker.sock"
+Oct 19 17:23:34 vp-master-node systemd[1]: Started Docker Application Container Engine.
+[opc@vp-master-node app]$ minikube start
+���  minikube v1.23.2 on Oracle 7.9 (arm64)
+���  Unable to pick a default driver. Here is what was considered, in preference order:
+    ▪ docker: Not healthy: "docker version --format {{.Server.Os}}-{{.Server.Version}}" exit status 1: Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.40/version": dial unix /var/run/docker.sock: connect: permission denied
+    ▪ docker: Suggestion: Add your user to the 'docker' group: 'sudo usermod -aG docker $USER && newgrp docker' <https://docs.docker.com/engine/install/linux-postinstall/>    ▪ kvm2: Not installed: exec: "virsh": executable file not found in $PATH
+    ▪ podman: Not installed: exec: "podman": executable file not found in $PATH
+    ▪ vmware: Not installed: exec: "docker-machine-driver-vmware": executable file not found in $PATH
+    ▪ virtualbox: Not installed: unable to find VBoxManage in $PATH
+
+❌  Exiting due to DRV_NOT_HEALTHY: Found driver(s) but none were healthy. See above for suggestions how to fix installed drivers.
+
+[opc@vp-master-node app]$ sudo minikube start
+���  minikube v1.23.2 on Oracle 7.9 (arm64)
+✨  Automatically selected the docker driver. Other choices: ssh, none
+���  The "docker" driver should not be used with root privileges.
+���  If you are running minikube within a VM, consider using --driver=none:
+���    https://minikube.sigs.k8s.io/docs/reference/drivers/none/
+
+❌  Exiting due to DRV_AS_ROOT: The "docker" driver should not be used with root privileges.
+
+[opc@vp-master-node app]$ minikube start
+���  minikube v1.23.2 on Oracle 7.9 (arm64)
+���  Unable to pick a default driver. Here is what was considered, in preference order:
+    ▪ docker: Not healthy: "docker version --format {{.Server.Os}}-{{.Server.Version}}" exit status 1: Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.40/version": dial unix /var/run/docker.sock: connect: permission denied
+    ▪ docker: Suggestion: Add your user to the 'docker' group: 'sudo usermod -aG docker $USER && newgrp docker' <https://docs.docker.com/engine/install/linux-postinstall/>    ▪ kvm2: Not installed: exec: "virsh": executable file not found in $PATH
+    ▪ podman: Not installed: exec: "podman": executable file not found in $PATH
+    ▪ vmware: Not installed: exec: "docker-machine-driver-vmware": executable file not found in $PATH
+    ▪ virtualbox: Not installed: unable to find VBoxManage in $PATH
+
+❌  Exiting due to DRV_NOT_HEALTHY: Found driver(s) but none were healthy. See above for suggestions how to fix installed drivers.
+
+[opc@vp-master-node app]$ sudo groupadd docker
+groupadd: group 'docker' already exists
+[opc@vp-master-node app]$ sudo usermod -aG docker $USER
+[opc@vp-master-node app]$ minikube start
+���  minikube v1.23.2 on Oracle 7.9 (arm64)
+���  Unable to pick a default driver. Here is what was considered, in preference order:
+    ▪ docker: Not healthy: "docker version --format {{.Server.Os}}-{{.Server.Version}}" exit status 1: Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.40/version": dial unix /var/run/docker.sock: connect: permission denied
+    ▪ docker: Suggestion: Add your user to the 'docker' group: 'sudo usermod -aG docker $USER && newgrp docker' <https://docs.docker.com/engine/install/linux-postinstall/>    ▪ kvm2: Not installed: exec: "virsh": executable file not found in $PATH
+    ▪ vmware: Not installed: exec: "docker-machine-driver-vmware": executable file not found in $PATH
+    ▪ podman: Not installed: exec: "podman": executable file not found in $PATH
+    ▪ virtualbox: Not installed: unable to find VBoxManage in $PATH
+
+❌  Exiting due to DRV_NOT_HEALTHY: Found driver(s) but none were healthy. See above for suggestions how to fix installed drivers.
+
+[opc@vp-master-node app]$ sudo chmod 666 /var/run/docker.sock
+[opc@vp-master-node app]$ minikube start
+���  minikube v1.23.2 on Oracle 7.9 (arm64)
+✨  Automatically selected the docker driver. Other choices: ssh, none
+���  Starting control plane node minikube in cluster minikube
+���  Pulling base image ...
+���  Downloading Kubernetes v1.22.2 preload ...
+    > preloaded-images-k8s-v13-v1...: 541.26 MiB / 541.26 MiB  100.00% 53.29 Mi
+    > gcr.io/k8s-minikube/kicbase: 321.22 MiB / 321.23 MiB  100.00% 6.29 MiB p/
+���  Creating docker container (CPUs=2, Memory=5700MB) ...
+kind: PersistentVolume
+���  Preparing Kubernetes v1.22.2 on Docker 20.10.8 ...
+    ▪ Generating certificates and keys ...
+kind: PersistentVolume
+    ▪ Booting up control plane ...
+    ▪ Configuring RBAC rules ...
+���  Verifying Kubernetes components...
+    ▪ Using image gcr.io/k8s-minikube/storage-provisioner:v5
+���  Enabled addons: storage-provisioner, default-storageclass
+���  kubectl not found. If you need it, try: 'minikube kubectl -- get pods -A'
+��  Done! kubectl is now configured to use "minikube" cluster and "default" namespace by default
+[opc@vp-master-node app]$ kubectl get pv
+No resources found
+[opc@vp-master-node app]$ kubectl get pods -A
+kind: PersistentVolumeClaim
+NAMESPACE     NAME                               READY   STATUS    RESTARTS      AGE
+kube-system   coredns-78fcd69978-jkhks           1/1     Running   0             52s
+kube-system   etcd-minikube                      1/1     Running   0             65s
+kube-system   kube-apiserver-minikube            1/1     Running   0             65s
+kube-system   kube-controller-manager-minikube   1/1     Running   0             65s
+kube-system   kube-proxy-s9759                   1/1     Running   0             53s
+kube-system   kube-scheduler-minikube            1/1     Running   0             65s
+kube-system   storage-provisioner                1/1     Running   1 (22s ago)   64s
+[opc@vp-master-node app]$ kubectl get pv -A
+No resources found
+[opc@vp-master-node app]$ ls
+configs  pv
+[opc@vp-master-node app]$ cd configs/
+kind: PersistentVolumeClaim
+[opc@vp-master-node configs]$ ls
+[opc@vp-master-node configs]$ vi local-pv01.yml
+[opc@vp-master-node configs]$ kubectl create -f ./local-pv01.yml ^C
+[opc@vp-master-node configs]$ vi local-pv01.yml
+[opc@vp-master-node configs]$ pwd
+/data/app/configs
+[opc@vp-master-node configs]$
+[opc@vp-master-node configs]$ kubectl create -f ./local-pv01.yml
+persistentvolume/pv0001 created
+[opc@vp-master-node configs]$ kubectl get pv -A
+NAME     CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS      CLAIM   STORAGECLASS   REASON   AGE
+pv0001   50Gi       RWO            Retain           Available                                   6s
+[opc@vp-master-node configs]$ vi local-pv01.yml
+[opc@vp-master-node configs]$ vi local-pvc01.yml
+[opc@vp-master-node configs]$ df -h
+Filesystem      Size  Used Avail Use% Mounted on
+devtmpfs         12G     0   12G   0% /dev
+tmpfs            12G     0   12G   0% /dev/shm
+tmpfs            12G   27M   12G   1% /run
+tmpfs            12G     0   12G   0% /sys/fs/cgroup
+apiVersion: v1
+kind: Service
+metadata:
+  name: mysql
+spec:
+  type: NodePort
+  ports:
+    - port: 3306
+    targetPort: 3306
+    nodePort: 31306 # exposed port we can communicate to
+  selector:
+    app: mysql
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+spec:
+/dev/sda3        39G  7.4G   32G  20% /
+spec:
+/dev/sda1       200M  7.9M  192M   4% /boot/efi
+/dev/sdb1       147G   60M  140G   1% /data
+tmpfs           2.3G     0  2.3G   0% /run/user/0
+spec:
+tmpfs           2.3G     0  2.3G   0% /run/user/994
+tmpfs           2.3G     0  2.3G   0% /run/user/1000
+[opc@vp-master-node configs]$ vi local-pvc01.yml
+[opc@vp-master-node configs]$ kubectl create -f ./local-pvc01.yml
+persistentvolumeclaim/localpvclaim-1 created
+apiVersion: v1
+[opc@vp-master-node configs]$ df -h
+Filesystem      Size  Used Avail Use% Mounted on
+devtmpfs         12G     0   12G   0% /dev
+tmpfs            12G     0   12G   0% /dev/shm
+tmpfs            12G   27M   12G   1% /run
+tmpfs            12G     0   12G   0% /sys/fs/cgroup
+/dev/sda3        39G  7.4G   32G  20% /
+    app: mysql
+/dev/sda1       200M  7.9M  192M   4% /boot/efi
+/dev/sdb1       147G   60M  140G   1% /data
+tmpfs           2.3G     0  2.3G   0% /run/user/0
+tmpfs           2.3G     0  2.3G   0% /run/user/994
+tmpfs           2.3G     0  2.3G   0% /run/user/1000
+[opc@vp-master-node configs]$ kubectl get pvc -A
+NAMESPACE   NAME             STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS   AGE
+default     localpvclaim-1   Bound    pvc-d5e4a089-c93a-40dd-b863-efadceec0c2d   50Gi       RWO            standard       14s
+[opc@vp-master-node configs]$ ls
+local-pv01.yml  local-pvc01.yml
+[opc@vp-master-node configs]$ vi local-mysql.yml
+[opc@vp-master-node configs]$ vi local-mysql.yml
+[opc@vp-master-node configs]$ kubectl create -f ./local-mysql.yml
+error: error parsing ./local-mysql.yml: error converting YAML to JSON: yaml: line 8: did not find expected '-' indicator
+[opc@vp-master-node configs]$ vi local-mysql.yml
+[opc@vp-master-node configs]$ kubectl create -f ./local-mysql.yml
+error: error validating "./local-mysql.yml": error validating data: ValidationError(Service.spec.ports): invalid type for io.k8s.api.core.v1.ServiceSpec.ports: got "map", 
+expected "array"; if you choose to ignore these errors, turn validation off with --validate=false
+[opc@vp-master-node configs]$ vi local-mysql.yml
+[opc@vp-master-node configs]$ vi local-mysql.yml
+[opc@vp-master-node configs]$ kubectl create -f ./local-mysql.yml
+service/mysql created
+deployment.apps/mysql created
+[opc@vp-master-node configs]$ kubectl get pods
+NAME                     READY   STATUS             RESTARTS   AGE
+mysql-5f68b86bb9-r54pm   0/1     ImagePullBackOff   0          23s
+[opc@vp-master-node configs]$ vi local-mysql.yml
+[opc@vp-master-node configs]$ kubectl create -f ./local-mysql.yml
+Error from server (Invalid): error when creating "./local-mysql.yml": Service "mysql" is invalid: spec.ports[0].nodePort: Invalid value: 31306: provided port is already allocated
+Error from server (AlreadyExists): error when creating "./local-mysql.yml": deployments.apps "mysql" already exists
+[opc@vp-master-node configs]$ kubectl update -f ./local-mysql.yml
+Error: flags cannot be placed before plugin name: --cluster
+[opc@vp-master-node configs]$ kubectl delete -f ./local-mysql.yml
+service "mysql" deleted
+deployment.apps "mysql" deleted
+[opc@vp-master-node configs]$ kubectl create -f ./local-mysql.yml
+service/mysql created
+deployment.apps/mysql created
+[opc@vp-master-node configs]$ kubectl get pods
+NAME                     READY   STATUS              RESTARTS   AGE
+mysql-64b695d48b-ddlf5   0/1     ContainerCreating   0          4s
+[opc@vp-master-node configs]$ kubectl get pods 
+NAME                     READY   STATUS         RESTARTS   AGE
+mysql-64b695d48b-ddlf5   0/1     ErrImagePull   0          8s
+[opc@vp-master-node configs]$ kubectl get pods 
+NAME                     READY   STATUS         RESTARTS   AGE
+mysql-64b695d48b-ddlf5   0/1     ErrImagePull   0          11s
+[opc@vp-master-node configs]$ kubectl get pods 
+NAME                     READY   STATUS         RESTARTS   AGE
+mysql-64b695d48b-ddlf5   0/1     ErrImagePull   0          13s
+[opc@vp-master-node configs]$ kubectl get pods 
+NAME                     READY   STATUS         RESTARTS   AGE
+mysql-64b695d48b-ddlf5   0/1     ErrImagePull   0          13s
+[opc@vp-master-node configs]$ kubectl get pods 
+NAME                     READY   STATUS         RESTARTS   AGE
+mysql-64b695d48b-ddlf5   0/1     ErrImagePull   0          14s
+[opc@vp-master-node configs]$ kubectl get pods 
+NAME                     READY   STATUS         RESTARTS   AGE
+mysql-64b695d48b-ddlf5   0/1     ErrImagePull   0          15s
+[opc@vp-master-node configs]$ kubectl get pods 
+NAME                     READY   STATUS         RESTARTS   AGE
+mysql-64b695d48b-ddlf5   0/1     ErrImagePull   0          16s
+[opc@vp-master-node configs]$ kubectl describe mysql-64b695d48b-ddlf5
+error: the server doesn't have a resource type "mysql-64b695d48b-ddlf5"
+[opc@vp-master-node configs]$ kubectl describe pod mysql-64b695d48b-ddlf5
+Name:         mysql-64b695d48b-ddlf5
+Namespace:    default
+Priority:     0
+Node:         minikube/192.168.49.2
+Start Time:   Tue, 19 Oct 2021 17:53:37 +0000
+Labels:       app=mysql
+              pod-template-hash=64b695d48b
+Annotations:  <none>
+Status:       Pending
+IP:           172.17.0.3
+IPs:
+  IP:           172.17.0.3
+Controlled By:  ReplicaSet/mysql-64b695d48b
+Containers:
+  mysql:
+    Container ID:
+    Image:          mysql:latest
+    Image ID:
+    Port:           3306/TCP
+    Host Port:      0/TCP
+    State:          Waiting
+      Reason:       ErrImagePull
+    Ready:          False
+    Restart Count:  0
+    Environment:
+      MYSQL_ROOT_PASSWORD:  testing
+    Mounts:
+      /var/lib/mysql from mysql-persistent-storage (rw)
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-nzw5x (ro)
+Conditions:
+  Type              Status
+  Initialized       True
+  Ready             False
+  ContainersReady   False
+  name: mysql
+  PodScheduled      True
+Volumes:
+  mysql-persistent-storage:
+    Type:       PersistentVolumeClaim (a reference to a PersistentVolumeClaim in the same namespace)
+    ClaimName:  localpvclaim-1
+    ReadOnly:   false
+  kube-api-access-nzw5x:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    ConfigMapOptional:       <nil>
+    DownwardAPI:             true
+QoS Class:                   BestEffort
+Node-Selectors:              <none>
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+Events:
+  Type     Reason     Age                From               Message
+  ----     ------     ----               ----               -------
+  Normal   Scheduled  50s                default-scheduler  Successfully assigned default/mysql-64b695d48b-ddlf5 to minikube
+  Normal   Pulling    31s (x2 over 50s)  kubelet            Pulling image "mysql:latest"
+  Warning  Failed     28s (x2 over 47s)  kubelet            Failed to pull image "mysql:latest": rpc error: code = Unknown desc = no matching manifest for linux/arm64/v8 in the manifest list entries
+  Warning  Failed     28s (x2 over 47s)  kubelet            Error: ErrImagePull
+  Normal   BackOff    13s (x2 over 46s)  kubelet            Back-off pulling image "mysql:latest"
+  Warning  Failed     13s (x2 over 46s)  kubelet            Error: ImagePullBackOff
+[opc@vp-master-node configs]$ vi local-mysql.yml
+[opc@vp-master-node configs]$ kubectl create -f ./local-mysql.yml
+Error from server (Invalid): error when creating "./local-mysql.yml": Service "mysql" is invalid: spec.ports[0].nodePort: Invalid value: 31306: provided port is already allocated
+Error from server (AlreadyExists): error when creating "./local-mysql.yml": deployments.apps "mysql" already exists
+[opc@vp-master-node configs]$ kubectl delete -f ./local-mysql.yml
+service "mysql" deleted
+deployment.apps "mysql" deleted
+[opc@vp-master-node configs]$ kubectl create -f ./local-mysql.yml
+service/mysql created
+deployment.apps/mysql created
+[opc@vp-master-node configs]$ kubectl get pods 
+NAME                     READY   STATUS              RESTARTS   AGE
+mysql-578554554f-5r49p   0/1     ContainerCreating   0          3s
+[opc@vp-master-node configs]$ kubectl get pods 
+NAME                     READY   STATUS              RESTARTS   AGE
+mysql-578554554f-5r49p   0/1     ContainerCreating   0          5s
+[opc@vp-master-node configs]$ kubectl get pods 
+NAME                     READY   STATUS              RESTARTS   AGE
+mysql-578554554f-5r49p   0/1     ContainerCreating   0          6s
+[opc@vp-master-node configs]$ kubectl get pods 
+NAME                     READY   STATUS              RESTARTS   AGE
+mysql-578554554f-5r49p   0/1     ContainerCreating   0          7s
+[opc@vp-master-node configs]$ kubectl get pods 
+NAME                     READY   STATUS              RESTARTS   AGE
+mysql-578554554f-5r49p   0/1     ContainerCreating   0          7s
+[opc@vp-master-node configs]$ kubectl get pods 
+^[[ANAME                     READY   STATUS              RESTARTS   AGE
+mysql-578554554f-5r49p   0/1     ContainerCreating   0          9s
+^[[A[opc@vp-master-node configkubectl describe pod mysql-578554554f-5r49p
+Name:         mysql-578554554f-5r49p
+Namespace:    default
+Priority:     0
+Node:         minikube/192.168.49.2
+Start Time:   Tue, 19 Oct 2021 17:57:40 +0000
+Labels:       app=mysql
+              pod-template-hash=578554554f
+Annotations:  <none>
+Status:       Running
+IP:           172.17.0.3
+IPs:
+  IP:           172.17.0.3
+Controlled By:  ReplicaSet/mysql-578554554f
+Containers:
+  mysql:
+    Container ID:   docker://42669bbfddb5231229d6a26845a5e839ad086d2a3be5e73b2dc4f307bb80b4c5
+    Image:          mysql/mysql-server:latest
+    Image ID:       docker-pullable://mysql/mysql-server@sha256:5241f7de0483a70f5856da995fea98904cfce8f1c51734b7f3836c1663eead17
+    Port:           3306/TCP
+    Host Port:      0/TCP
+    State:          Running
+      Started:      Tue, 19 Oct 2021 17:57:59 +0000
+    Ready:          True
+    Restart Count:  0
+    Environment:
+      MYSQL_ROOT_PASSWORD:  testing
+    Mounts:
+      /var/lib/mysql from mysql-persistent-storage (rw)
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-fl85c (ro)
+Conditions:
+  Type              Status
+  Initialized       True
+  Ready             True
+  ContainersReady   True
+  PodScheduled      True
+Volumes:
+  mysql-persistent-storage:
+    Type:       PersistentVolumeClaim (a reference to a PersistentVolumeClaim in the same namespace)
+    ClaimName:  localpvclaim-1
+    ReadOnly:   false
+  kube-api-access-fl85c:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    ConfigMapOptional:       <nil>
+    DownwardAPI:             true
+QoS Class:                   BestEffort
+Node-Selectors:              <none>
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+Events:
+  Type    Reason     Age   From               Message
+  ----    ------     ----  ----               -------
+  Normal  Scheduled  23s   default-scheduler  Successfully assigned default/mysql-578554554f-5r49p to minikube
+  Normal  Pulling    23s   kubelet            Pulling image "mysql/mysql-server:latest"
+  Normal  Pulled     4s    kubelet            Successfully pulled image "mysql/mysql-server:latest" in 18.770352591s
+  Normal  Created    4s    kubelet            Created container mysql
+  Normal  Started    4s    kubelet            Started container mysql
+[opc@vp-master-node configs]$ kubectl describe pod mysql-578554554f-5r49p
+Name:         mysql-578554554f-5r49p
+Namespace:    default
+Priority:     0
+Node:         minikube/192.168.49.2
+Start Time:   Tue, 19 Oct 2021 17:57:40 +0000
+Labels:       app=mysql
+              pod-template-hash=578554554f
+Annotations:  <none>
+Status:       Running
+IP:           172.17.0.3
+IPs:
+  IP:           172.17.0.3
+Controlled By:  ReplicaSet/mysql-578554554f
+Containers:
+  mysql:
+    Container ID:   docker://42669bbfddb5231229d6a26845a5e839ad086d2a3be5e73b2dc4f307bb80b4c5
+    Image:          mysql/mysql-server:latest
+    Image ID:       docker-pullable://mysql/mysql-server@sha256:5241f7de0483a70f5856da995fea98904cfce8f1c51734b7f3836c1663eead17
+    Port:           3306/TCP
+    Host Port:      0/TCP
+    State:          Running
+      Started:      Tue, 19 Oct 2021 17:57:59 +0000
+    Ready:          True
+    Restart Count:  0
+    Environment:
+      MYSQL_ROOT_PASSWORD:  testing
+    Mounts:
+      /var/lib/mysql from mysql-persistent-storage (rw)
+      /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-fl85c (ro)
+Conditions:
+  Type              Status
+  Initialized       True
+  Ready             True
+  ContainersReady   True
+  PodScheduled      True
+Volumes:
+  mysql-persistent-storage:
+    Type:       PersistentVolumeClaim (a reference to a PersistentVolumeClaim in the same namespace)
+    ClaimName:  localpvclaim-1
+    ReadOnly:   false
+  kube-api-access-fl85c:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    ConfigMapOptional:       <nil>
+    DownwardAPI:             true
+QoS Class:                   BestEffort
+Node-Selectors:              <none>
+Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s
+                             node.kubernetes.io/unreachable:NoExecute op=Exists for 300s
+Events:
+  Type    Reason     Age   From               Message
+  ----    ------     ----  ----               -------
+  Normal  Scheduled  30s   default-scheduler  Successfully assigned default/mysql-578554554f-5r49p to minikube
+  Normal  Pulling    30s   kubelet            Pulling image "mysql/mysql-server:latest"
+  Normal  Pulled     11s   kubelet            Successfully pulled image "mysql/mysql-server:latest" in 18.770352591s
+  Normal  Created    11s   kubelet            Created container mysql
+  Normal  Started    11s   kubelet            Started container mysql
+[opc@vp-master-node configs]$ kubectl get pods 
+NAME                     READY   STATUS    RESTARTS   AGE
+mysql-578554554f-5r49p   1/1     Running   0          33s
+[opc@vp-master-node configs]$ kubectl get service
+NAME         TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)          AGE
+kubernetes   ClusterIP   10.96.0.1      <none>        443/TCP          29m
+mysql        NodePort    10.105.22.51   <none>        3306:31306/TCP   48s
+[opc@vp-master-node configs]$ ls
+local-mysql.yml  local-pv01.yml  local-pvc01.yml
+[opc@vp-master-node configs]$ cd ../
+[opc@vp-master-node app]$ ls
+configs  pv
+[opc@vp-master-node app]$ cd pv
+[opc@vp-master-node pv]$ ls
+[opc@vp-master-node pv]$ cd ../
+[opc@vp-master-node app]$ d configs/
+-bash: d: command not found
+[opc@vp-master-node app]$ ls
+configs  pv
+[opc@vp-master-node app]$ cd configs/
+[opc@vp-master-node configs]$ cat local-
+local-mysql.yml  local-pv01.yml   local-pvc01.yml
+[opc@vp-master-node configs]$ cat local-mysql.yml 
+apiVersion: v1
+kind: Service
+metadata:
+  name: mysql
+spec:
+  type: NodePort
+  ports:
+    - port: 3306
+      targetPort: 3306
+      nodePort: 31306 # exposed port we can communicate to
+  selector:
+    app: mysql
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mysql
+spec:
+  selector:
+    matchLabels:
+      app: mysql
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: mysql
+    spec:
+      containers:
+        - image: mysql/mysql-server:latest
+          name: mysql
+          env:
+            - name: MYSQL_ROOT_PASSWORD
+              value: testing
+          ports:
+            - containerPort: 3306
+              name: mysql
+          volumeMounts:
+            - name: mysql-persistent-storage
+              mountPath: /var/lib/mysql
+      volumes:
+        - name: mysql-persistent-storage
+          persistentVolumeClaim:
+            claimName: localpvclaim-1
+[opc@vp-master-node configs]$ docker image -a
+unknown shorthand flag: 'a' in -a
+See 'docker image --help'.
+
+Usage:  docker image COMMAND
+
+Manage images
+
+Commands:
+  build       Build an image from a Dockerfile
+  history     Show the history of an image
+  import      Import the contents from a tarball to create a filesystem image
+  inspect     Display detailed information on one or more images
+  load        Load an image from a tar archive or STDIN
+  ls          List images
+  prune       Remove unused images
+  pull        Pull an image or a repository from a registry
+  push        Push an image or a repository to a registry
+  rm          Remove one or more images
+  save        Save one or more images to a tar archive (streamed to STDOUT by default)
+  tag         Create a tag TARGET_IMAGE that refers to SOURCE_IMAGE
+
+Run 'docker image COMMAND --help' for more information on a command.
+
+[opc@vp-master-node configs]$ docker image
+
+Usage:  docker image COMMAND
+
+Manage images
+
+Commands:
+  build       Build an image from a Dockerfile
+  history     Show the history of an image
+  import      Import the contents from a tarball to create a filesystem image
+  inspect     Display detailed information on one or more images
+  load        Load an image from a tar archive or STDIN
+  ls          List images
+  prune       Remove unused images
+  pull        Pull an image or a repository from a registry
+  push        Push an image or a repository to a registry
+  rm          Remove one or more images
+  save        Save one or more images to a tar archive (streamed to STDOUT by default)
+  tag         Create a tag TARGET_IMAGE that refers to SOURCE_IMAGE
+
+Run 'docker image COMMAND --help' for more information on a command.
+[opc@vp-master-node configs]$ docker image ls
+REPOSITORY                    TAG                 IMAGE ID            CREATED             SIZE
+gcr.io/k8s-minikube/kicbase   v0.0.27             f94e08eb0335        4 weeks ago         980MB
+[opc@vp-master-node configs]$ ls
+local-mysql.yml  local-pv01.yml  local-pvc01.yml
+[opc@vp-master-node configs]$ kubectl get service
+NAME         TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)          AGE
+kubernetes   ClusterIP   10.96.0.1      <none>        443/TCP          32m
+mysql        NodePort    10.105.22.51   <none>        3306:31306/TCP   3m27s
+[opc@vp-master-node configs]$ kubectl get pods
+NAME                     READY   STATUS    RESTARTS   AGE
+mysql-578554554f-5r49p   1/1     Running   0          3m35s
+[opc@vp-master-node configs]$ kubectl exec -ti mysql-578554554f-5r49p -- bash
+bash-4.4# mysql 
+ERROR 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+bash-4.4# mysql -u root -p testing
+Enter password:
+ERROR 1049 (42000): Unknown database 'testing'
+bash-4.4# mysql -u root
+ERROR 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+bash-4.4# mysql -p root
+Enter password:
+ERROR 1049 (42000): Unknown database 'root'
+bash-4.4# mysql -u root -p
+Enter password:
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 12
+Server version: 8.0.26 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2021, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> show database
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'database' at line 1
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+4 rows in set (0.00 sec)
+
+mysql> use mysql;
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+mysql> show tables;
++------------------------------------------------------+
+| Tables_in_mysql                                      |
++------------------------------------------------------+
+| columns_priv                                         |
+| component                                            |
+| db                                                   |
+| default_roles                                        |
+| engine_cost                                          |
+| func                                                 |
+| general_log                                          |
+| global_grants                                        |
+| gtid_executed                                        |
+| help_category                                        |
+| help_keyword                                         |
+| help_relation                                        |
+| help_topic                                           |
+| innodb_index_stats                                   |
+| innodb_table_stats                                   |
+| password_history                                     |
+| plugin                                               |
+| procs_priv                                           |
+| proxies_priv                                         |
+| replication_asynchronous_connection_failover         |
+| replication_asynchronous_connection_failover_managed |
+| replication_group_configuration_version              |
+| replication_group_member_actions                     |
+| role_edges                                           |
+| server_cost                                          |
+| servers                                              |
+| slave_master_info                                    |
+| slave_relay_log_info                                 |
+| slave_worker_info                                    |
+| slow_log                                             |
+| tables_priv                                          |
+| time_zone                                            |
+| time_zone_leap_second                                |
+| time_zone_name                                       |
+| time_zone_transition                                 |
+| time_zone_transition_type                            |
+| user                                                 |
++------------------------------------------------------+
+37 rows in set (0.00 sec)
+
+mysql> exit
+Bye
+bash-4.4# exit
+exit
+[opc@vp-master-node configs]$ kubectl get pods
+NAME                     READY   STATUS    RESTARTS   AGE
+mysql-578554554f-5r49p   1/1     Running   0          6m41s
+[opc@vp-master-node configs]$ kubectl get svc
+NAME         TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)          AGE
+kubernetes   ClusterIP   10.96.0.1      <none>        443/TCP          37m
+mysql        NodePort    10.105.22.51   <none>        3306:31306/TCP   8m30s
+[opc@vp-master-node configs]$

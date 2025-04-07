@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: yuvicapsol-website-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: yuvicapsol-website
+  template:
+    metadata:
+      labels:
+        app: yuvicapsol-website
+    spec:
+      containers:
+        - name: yuvicapsol-website
+          image: l0ny1ucif32/yuvicapsol-website:latest
+          ports:
+            - containerPort: 3000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: yuvicapsol-website
+spec:
+  selector:
+    app: yuvicapsol-website
+  type: NodePort
+  ports:
+    - port: 3000 # expose the service on internal port 3000
+      targetPort: 3000 # our NodeJS app listens on port 3000

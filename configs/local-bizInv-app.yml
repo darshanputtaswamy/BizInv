@@ -1,0 +1,60 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bizinv-app-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: bizinv-app
+  template:
+    metadata:
+      labels:
+        app: bizinv-app
+    spec:
+      containers:
+        - name: bizinv-app
+          image: nginx
+          ports:
+            - containerPort: 80
+            - containerPort: 443
+          volumeMounts:
+              - name: nginx-config
+                mountPath: /etc/nginx/
+              - name: nginx-www
+                mountPath: /var/www
+              - name: nginx-logs
+                mountPath:  /var/log/nginx/
+              - name: nginx-cert 
+                mountPath: /etc/letsencrypt
+      volumes:
+        - name: nginx-config
+          hostPath:
+            path: /data/app/frontend/nginx/config
+        - name: nginx-www
+          hostPath:
+            path: /data/app/frontend/nginx/www/myezbar.ml/web
+        - name: nginx-logs
+          hostPath:
+            path: /data/app/frontend/nginx/log
+        - name: nginx-cert
+          hostPath:
+            path: /etc/letsencrypt/ 
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: bizinv-app
+spec:
+  selector:
+    app: bizinv-app
+  type: LoadBalancer
+  ports:
+    - name: http
+      port: 80
+      targetPort: 80
+    - name: https
+      port: 443
+      targetPort: 443
+  externalIPs:
+    - 10.0.124.145

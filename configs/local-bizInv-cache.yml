@@ -1,0 +1,41 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: bizinv-cache
+spec:
+  type: NodePort
+  ports:
+    - port: 6379
+      targetPort: 6379
+      nodePort: 31316 # exposed port we can communicate to
+  selector:
+    app: bizinv-cache
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bizinv-cache
+spec:
+  selector:
+    matchLabels:
+      app: bizinv-cache
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: bizinv-cache
+    spec:
+      containers:
+        - image: redis:latest
+          name: bizinv-cache
+          ports:
+            - containerPort: 6379
+          command: ["redis-server", "/etc/conf/redis.conf"]
+          volumeMounts:
+              - name: redis-config
+                mountPath: /etc/conf/
+      volumes:
+        - name: redis-config
+          hostPath:
+            path: /data/app/frontend/redis/config

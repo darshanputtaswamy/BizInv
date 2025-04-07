@@ -1,0 +1,671 @@
+[opc@vp-master-node ~]$ cat history20211120.txt 
+    1  curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-latest.aarch64.rpm
+    2  sudo rpm -Uvh minikube-latest.aarch64.rpm
+    3  vi ~/.bash_profile 
+    4  minikube kubectl -- get po -A
+    5  sudo iscsiadm -m node -o new -T iqn.2015-12.com.oracleiaas:5a2814dc-cfd8-44e3-b837-c9f188eeb20a -p 169.254.2.2:3260
+    6  sudo iscsiadm -m node -o update -T iqn.2015-12.com.oracleiaas:5a2814dc-cfd8-44e3-b837-c9f188eeb20a -n node.startup -v automatic
+    7  sudo iscsiadm -m node -T iqn.2015-12.com.oracleiaas:5a2814dc-cfd8-44e3-b837-c9f188eeb20a -p 169.254.2.2:3260 -l
+    8  fdisk -l
+    9  cd /dev
+   10  ls
+   11  cd /dev/oracleoci/oraclevdd
+   12  ls /dev/oracleoci/oraclevdd
+   13  sudo fdisk -l
+   14  sudo fdisk /dev/sdb
+   15  sudo fdisk -l
+   16  ll /dev/oracleoci/oraclevd*
+   17  vi /etc/fstab 
+   18  ll /dev/oracleoci/oraclevd*
+   19  df -h
+   20  cat /etc/fstab
+   21  vi /etc/fstab 
+   22  sudo vi /etc/fstab 
+   23  mount -a
+   24  sudo mount -a
+   25  sudo vi /etc/fstab 
+   26  fdisk -l
+   27  sudo fdisk -l
+   28  sudo fdisk /dev/sdb1 
+   29  sudo mkfs.ext4 -F /dev/sdb1
+   30  mkdir /data
+   31  sudo mkdir /data
+   32  sudo vi fstab 
+   33  sudo vi /etc/fstab
+   34  sudo mount -a
+   35  sudo mount /dev/sdb1 /data
+   36  cd /data
+   37  ls
+   38  cd ../
+   39  sudo vi /etc/fstab
+   40  sudo mount -a
+   41  cd /data
+   42  ls
+   43  mkdir appconfigs
+   44  ls
+   45  ls -ltra
+   46  exit
+   47  cd /data
+   48  ls
+   49  cd /
+   50  ls
+   51  ls -ltra
+   52  id opc
+   53  df -h
+   54  cd /data
+   55  df -h
+   56  ls
+   57  cd ../
+   58  ls
+   59  chwon opc:opc data 
+   60  sudo chown opc:opc data 
+   61  ls
+   62  ls -ltra
+   63  cd data
+   64  ls
+   65  mkdir app
+   66  ls
+   67  cd app
+   68  ls
+   69  mkdir configs
+   70  mkdir pv
+   71  ls -ltra
+   72  pwd
+   73  kubectl proxy --address=&#39;0.0.0.0&#39; --disable-filter=true
+   74  kubectl proxy --address='0.0.0.0' --disable-filter=true
+   75  minikube
+   76  minikube kubectl 
+   77  minikube kubectl  --
+   78  minikube kubectl  -- get pv
+   79  minikube start
+   80  sudo yum install docker
+   81  df 0h
+   82  df -h
+   83  minikube start
+   84  docker
+   85  minikube start
+   86  docker version --format {{.Server.Os}}-{{.Server.Version}}
+   87  sudo systemctl unmask docker
+   88  sudo systemctl start docker
+   89  sudo systemctl status docker
+   90  minikube start
+   91  sudo systemctl msk docker
+   92  sudo systemctl status docker
+   93  sudo systemctl stop docker
+   94  sudo systemctl start docker
+   95  sudo systemctl unmask docker
+   96  sudo systemctl start docker
+   97  sudo systemctl status docker
+   98  sudo systemctl status docker -l
+   99  minikube start
+  100  sudo minikube start
+  101  minikube start
+  102  sudo groupadd docker
+  103  sudo usermod -aG docker $USER
+  104  minikub
+  105  minikube start
+  106  kubectl get pv
+  107  kubectl get pods -A
+  108  kubectl get pv -A
+  109  ls
+  110  cd configs/
+  111  ls
+  112  vi local-pv01.yml
+  113  pwd
+  114  kubectl create -f ./local-pv01.yml
+  115  kubectl get pv -A
+  116  vi local-pv01.yml
+  117  vi local-pvc01.yml
+  118  df -h
+  119  vi local-pvc01.yml
+  120  kubectl create -f ./local-pvc01.yml
+  121  df -h
+  122  kubectl get pvc -A
+  123  ls
+  124  vi local-mysql.yml
+  125  kubectl create -f ./local-mysql.yml
+  126  vi local-mysql.yml
+  127  kubectl create -f ./local-mysql.yml
+  128  vi local-mysql.yml
+  129  kubectl create -f ./local-mysql.yml
+  130  kubectl get pods 
+  131  vi local-mysql.yml
+  132  kubectl create -f ./local-mysql.yml
+  133  kubectl update -f ./local-mysql.yml
+  134  kubectl delete -f ./local-mysql.yml
+  135  kubectl create -f ./local-mysql.yml
+  136  kubectl get pods 
+  137  kubectl describe mysql-64b695d48b-ddlf5
+  138  kubectl describe pod mysql-64b695d48b-ddlf5
+  139  vi local-mysql.yml
+  140  kubectl create -f ./local-mysql.yml
+  141  kubectl delete -f ./local-mysql.yml
+  142  kubectl create -f ./local-mysql.yml
+  143  kubectl get pods 
+  144  kubectl describe pod mysql-578554554f-5r49p
+  145  kubectl get pods 
+  146  kubectl get service
+  147  ls
+  148  cd ../
+  149  ls
+  150  cd pv
+  151  ls
+  152  cd ../
+  153  d configs/
+  154  ls
+  155  cd configs/
+  156  cat local-mysql.yml 
+  157  docker image -a
+  158  docker image
+  159  docker image ls
+  160  ls
+  161  kubectl get service
+  162  kubectl get pods
+  163  kubectl exec -ti mysql-578554554f-5r49p -- bash
+  164  kubectl get pods
+  165  kubectl get svc
+  166  vi ~/terminal-spool.19Oct2021.txt
+  167  cd ../
+  168  ls
+  169  cd pv
+  170  ls
+  171  cd ../
+  172  df -f
+  173  df -h
+  174   kubectl describe deployment mysql
+  175   kubectl get pods -l app=mysql
+  176  ls
+  177  cd /data/
+  178  cd app/configs/
+  179  ls
+  180  cat local-
+  181  cat local-pv01.yml 
+  182  ls
+  183  cat local-pvc01.yml 
+  184  ls
+  185  cat local-mysql.yml 
+  186  cd /data
+  187  ls
+  188  cd app/configs/
+  189  ls
+  190  vi local-bizInv-apiserver.yml
+  191  kubectl create -f ./local-bizInv-apiserver.yml 
+  192  kubectl get pods
+  193  clear
+  194  kubectl get pods
+  195  kubectl logs 
+  196  kubectl logs  bizinv-apiserver-deployment-845ffc59cd-kptsd
+  197  kubectl describe pod  bizinv-apiserver-deployment-845ffc59cd-kptsd
+  198  kubectl get pods
+  199  kubectl describe pod bizinv-apiserver-deployment-845ffc59cd-kptsd
+  200  kubectl logs --previous --tail 10
+  201  kubectl logs pod bizinv-apiserver-deployment-845ffc59cd-kptsd --previous --tail 10
+  202  kubectl logs pods bizinv-apiserver-deployment-845ffc59cd-kptsd --previous --tail 10
+  203  kubectl logs bizinv-apiserver-deployment-845ffc59cd-kptsd --previous --tail 10
+  204  history
+  205  kubectl logs  bizinv-apiserver-deployment-845ffc59cd-kptsd
+  206  kubectl describe pod bizinv-apiserver-deployment-845ffc59cd-kptsd
+  207   kubectl describe service bizinv-apiserver
+  208  ls
+  209  cd ~
+  210  ls
+  211  cd /u01`
+  212  cd /u01
+  213  cd /
+  214  ls
+  215  cd root/
+  216  sudo su
+  217  cd /data/
+  218  ls
+  219  cd app/configs/
+  220  kubectl delete -f ./local-bizInv-apiserver.yml
+  221  kubectl get pods
+  222  kubectl get services
+  223  kubectl create ./local-bizInv-apiserver.yml
+  224  kubectl create -f ./local-bizInv-apiserver.yml
+  225  kubect
+  226  kubectl logs  bizinv-apiserver-deployment-845ffc59cd-5dfbt
+  227  kubectl describe bizinv-apiserver-deployment-845ffc59cd-5dfbt
+  228  kubectl describe pods bizinv-apiserver-deployment-845ffc59cd-5dfbt
+  229  kubectl logs  bizinv-apiserver-deployment-845ffc59cd-5dfbt
+  230  kubectl logs pods bizinv-apiserver-deployment-845ffc59cd-5dfbt
+  231  kubectl logs
+  232  kubectl logs -f -p bizinv-apiserver
+  233  kubectl logs -f -p
+  234  kubectl logs -h
+  235  kubectl logs bizinv-apiserver
+  236  kubectl logs -f -l app=bizinv-apiserver
+  237  uname -a
+  238  uname --m
+  239   docker buildx build  --platform linux/arm64
+  240   --push
+  241  uname -a
+  242  kubectlget pods
+  243  kubectl get pods
+  244  cd /data
+  245  cd app/configs/
+  246  ls
+  247  kubernetes delete -f local-bizInv-apiserver.yml
+  248  kubernets delete -f ./local-bizInv-apiserver.yml
+  249  kubernetes delete -f ./local-bizInv-apiserver.yml
+  250  kubecetl delete -f ./local-bizInv-apiserver.yml
+  251  kubectl delete -f ./local-bizInv-apiserver.yml
+  252  kubectl delete -f ./local-mysql.yml 
+  253  vi ./local-mysql.yml 
+  254  kubectl create -f ./local-mysql.yml 
+  255  vi ./local-bizInv-apiserver.yml 
+  256  kubectl create -f ./local-bizInv-apiserver.yml 
+  257  kubectlget pods
+  258  kubectl get pods
+  259  kubectl get logs bizinv-apiserver-deployment-8f9b4ff84-jp5pp
+  260  kubectl logs bizinv-apiserver-deployment-8f9b4ff84-jp5pp
+  261  kubectl get svc
+  262  kubectl port-forward --address 10.0.43.156 services/bizinv-apiserver 8080:80
+  263  kubectl port-forward --address 10.0.43.156 services/bizinv-apiserver 8080:3000
+  264  cd /data/app/configs/
+  265  ls
+  266  cat local-bizInv-apiserver.yml 
+  267  kubectl delete -f ./local-bizInv-apiserver.yml
+  268  vi ./local-bizInv-apiserver.yml
+  269  kubectl create -f ./local-bizInv-apiserver.yml 
+  270  kubectl get svc
+  271  ifconfig 
+  272  kubectl port-forward --address 10.0.124.145 services/bizinv-apiserver 8080:3000
+  273  kubectl get logs bizinv-apiserver-deployment
+  274  kubectl logs bizinv-apiserver-deployment-8f9b4ff84-jp5pp
+  275  kubectl logs
+  276  kubectl  get pods
+  277  kubectl logs bizinv-apiserver-deployment-5f65c6674c-5p8pr
+  278  kubectl logs bizinv-apiserver-deployment-5f65c6674c-5p8pr
+  279  cd ~
+  280  ls
+  281  cat terminal-spool.19Oct2021.txt 
+  282  clear
+  283  vi terminal-spool.19Oct2021.txt 
+  284  firewalld
+  285  sudo firewalld
+  286  sudo firewalld-cmd
+  287  sudo firewalld
+  288  sudo firewall-cmd --reload
+  289   sudo firewall-cmd
+  290  sudo firewall-cmd --zone=public --permanent --add-port=8080/tcp
+  291  sudo firewall-cmd --reload
+  292  kubectl get nodes
+  293  kubectl get pods
+  294  cd kubectl exec -it  bizinv-db-6ccd578c8-87bs7 /bin/bash
+  295   kubectl exec -it  bizinv-db-6ccd578c8-87bs7 /bin/bash
+  296   kubectl exec  bizinv-db-6ccd578c8-87bs7 /bin/bash
+  297   kubectl exe
+  298   kubectl exec 
+  299   kubectl exec bizinv-db-6ccd578c8-87bs7
+  300   kubectl exec bizinv-db-6ccd578c8-87bs7 /bin/nash
+  301   kubectl exec bizinv-db-6ccd578c8-87bs7 /bin/bash
+  302   kubectl exec bizinv-db-6ccd578c8-87bs7 -- /bin/bash
+  303   kubectl exe-it c bizinv-db-6ccd578c8-87bs7 -- /bin/bash
+  304   kubectl exec --it c bizinv-db-6ccd578c8-87bs7 -- /bin/bash
+  305   kubectl exec -it c bizinv-db-6ccd578c8-87bs7 -- /bin/bash
+  306   kubectl exec -it bizinv-db-6ccd578c8-87bs7 -- /bin/bash
+  307   kubectl exec -it bizinv-apiserver-deployment-5f65c6674c-5p8pr -- /bin/bash
+  308  kubectl get services
+  309   kubectl exec -it bizinv-apiserver-deployment-5f65c6674c-5p8pr -- /bin/bash
+  310  kKubectl get nodes -o wide
+  311  kubectl get node -o wide
+  312  kubectl get service -o wide
+  313   kubectl exec -it bizinv-apiserver-deployment-5f65c6674c-5p8pr -- /bin/bash
+  314  kubectl get services
+  315  route -n
+  316  minikube service list
+  317  kubectl get ingress
+  318  minikube addons enable ingress
+  319  kubectl get ingress
+  320  kubectl get
+  321  kubectl get pods
+  322  minikube service list
+  323  kKubectl get nodes -o wide
+  324  kKbectl get nodes -o wide
+  325  kubectl get nodes -o wide
+  326  kubectl get pods -o wide
+  327   kubectl exec -it bizinv-apiserver-deployment-5f65c6674c-5p8pr -- /bin/bash
+  328  kubectl describe 
+  329  kubectl describe service 
+  330  IP Family Policy:         SingleStack
+  331  IP Families:              IPv4
+  332  IP:                       10.102.7.60
+  333  IPs:                      10.102.7.60
+  334  Port:                     <unset>  3000/TCP
+  335  TargetPort:               3000/TCP
+  336  NodePort:                 <unset>  30656/TCP
+  337  Endpoints:                172.17.0.4:3000,172.17.0.5:3000
+  338  kubectl describe deployment
+  339  kKbectl get svc
+  340  kubectl get svc
+  341  kubectl get pods -o wide
+  342  kubectl get endpoints
+  343  kubectl describe pods
+  344  kubectl describe service
+  345  kubectl get pods -o wide
+  346  kubectl get svc -o wide
+  347  curl -vvv 10.102.7.60
+  348  curl -vvv 10.102.7.60:30656
+  349   kubectl exec -it bizinv-apiserver-deployment-5f65c6674c-5p8pr -- /bin/bash
+  350   kubectl exec -it  bizinv-db-6ccd578c8-87bs7 /bin/bash
+  351  cd /app
+  352  cd /data
+  353  cd app/configs/
+  354  ls
+  355  cat local-mysql.yml 
+  356  kubectl delete -f ./local-mysql.yml 
+  357  vi local-mysql.yml 
+  358  kubectl create -f ./local-mysql.yml 
+  359  kubectl get pods
+  360   kubectl exec -it  bizinv-db-7894547774-tdsk4 /bin/bash
+  361   kubectl exec -it bizinv-db-7894547774-tdsk4 /bin/bash
+  362   kubectl exec -it  bizinv-db-6ccd578c8-87bs7 -- /bin/bash
+  363   kubectl exec -it  bizinv-db-7894547774-tdsk4 -- /bin/bash
+  364   kubectl get pods
+  365  kubectl logs bizinv-db-7894547774-tdsk4
+  366  cd -
+  367  cd c -
+  368  cd -
+  369  clear
+  370  ls
+  371  vi local-mysql.yml 
+  372  kubectl create -f ./local-mysql.yml 
+  373  kubectl delete -f ./local-mysql.yml 
+  374  kubectl create -f ./local-mysql.yml 
+  375   kubectl get pods
+  376   kubectl exec -it  bizinv-db-6ccd578c8-prgsk -- /bin/bash
+  377  cat local-mysql.yml 
+  378   kubectl exec -it  bizinv-db-6ccd578c8-prgsk -- /bin/bash
+  379  ls
+  380  kubectl delete -f ./local-mysql.yml
+  381  vi ./local-mysql.yml 
+  382   kubectl create -f ./local-mysql.yml 
+  383  vi ./local-mysql.yml 
+  384   kubectl create -f ./local-mysql.yml 
+  385  vi ./local-mysql.yml 
+  386   kubectl create -f ./local-mysql.yml 
+  387   kubectl delete -f ./local-mysql.yml 
+  388   kubectl create -f ./local-mysql.yml 
+  389  kubectl get pods 
+  390  kubectl get pods -o wide
+  391  kubectl get svc -o wide
+  392   kubectl delete -f ./local-mysql.yml 
+  393  vi ./local-mysql.yml 
+  394   kubectl create -f ./local-mysql.yml 
+  395  kubectl get pods -o wide
+  396  kubectl get svc -o wide
+  397   kubectl exec -it  bizinv-db-6ccd578c8-prgsk -- /bin/bash
+  398   kubectl exec -it  bizinv-db-6ccd578c8-w5ljb -- /bin/bash
+  399  ls
+  400   kubectl delete -f ./local-mysql.yml 
+  401   kubectl create -f ./local-mysql.yml 
+  402  kubectl get pods -o wide
+  403  cd /data/app/configs/
+  404  ls
+  405  cat local-bizInv-apiserver.yml 
+  406  ls
+  407  vi local-bizInv-app.yml
+  408  kubectl create -f ./local-bizInv-app.yml 
+  409  kubectl get pods
+  410  kubectl port-forward --address 10.0.124.145 services/bizinv-app 80:80
+  411  sudo kubectl port-forward --address 10.0.124.145 services/bizinv-app 80:80
+  412  kubectl port-forward --address 10.0.124.145 services/bizinv-app 80:80
+  413  kubectl port-forward --address 10.0.124.145 services/bizinv-app 8080:80
+  414  netstat 
+  415  kubectl port-forward --address 10.0.124.145 services/bizinv-app 8080:80
+  416  kubectl  delete -f ./local-bizInv-app.yml 
+  417  kubectl create -f ./local-bizInv-app.yml 
+  418  kubectl get pods
+  419  kubectl describe bizinv-app-deployment-67b5f97b94-45z58
+  420  kubectl describe pods bizinv-app-deployment-67b5f97b94-45z58
+  421  kubectl get svc -o wide
+  422  curl http://10.111.156.104:31363
+  423  curl -vv http://10.111.156.104:31363
+  424  kubectl get ep
+  425  curl -vv 172.17.0.7:80
+  426  curl -vv 172.17.0.3:3306
+  427  curl -vv 172.17.0.4:3000
+  428  kubectl port-forward --address 10.0.124.145 services/bizinv-app 8080:80
+  429  kubectl port-forward --address 10.0.124.145 services/mynginxapp 8080:80
+  430  kubectl port-forward --address 10.0.124.145 services/bizinv-app 8080:80
+  431  kubectl port-forward --address 10.0.124.145 services/mynginxapp 8080:80
+  432  kubectl port-forward --address 10.0.124.145 services/bizinv-app 8080:80
+  433  kubectl port-forward --address 10.0.124.145 services/mynginxapp 8080:80
+  434  kubectl port-forward --address 10.0.124.145 services/bizinv-app 8080:80
+  435  kubectl get pods
+  436  kubectl get pods -o wide
+  437  curl http://172.17.0.7
+  438  kubectl get ep
+  439  curl http://172.17.0.7
+  440  curl http://172.17.0.3:3306
+  441  kubectl logs bizinv-app-deployment-67b5f97b94-bqvdc
+  442  kubectlexec -it bizinv-app-deployment-67b5f97b94-bqvdc -- /bin/bash
+  443  kubectl exec -it bizinv-app-deployment-67b5f97b94-bqvdc -- /bin/bash
+  444  kubectl exec -it bizinv-app-deployment-67b5f97b94-bqvdc -- bash
+  445  kubectl exec -it bizinv-app-deployment-67b5f97b94-bqvdc -- /sbin/bash
+  446  kubectl exec -it bizinv-app-deployment-67b5f97b94-bqvdc -- /bin/bash
+  447  kubectl exec -it bizinv-app-deployment-67b5f97b94-bqvdc
+  448  kubectl logs bizinv-app-deployment-67b5f97b94-bqvdc
+  449  kubectl exec -it bizinv-app-deployment-67b5f97b94-bqvdc -- cat /var/log/nginx/access.log
+  450  kubectl exec -it bizinv-app-deployment-67b5f97b94-bqvdc -- `cat /var/log/nginx/access.log`
+  451  kubectl exec -it bizinv-app-deployment-67b5f97b94-bqvdc -- `cat /var/log/messages`
+  452  cd /data
+  453  cd app/configs/
+  454  ls
+  455  cat local-bizInv-app.yml 
+  456  kubectl get pods
+  457  kubectl delete -f ./local-bizInv-app.yml 
+  458  kubectl get pods
+  459  kubectl create deployment mynginxapp --image=nginx:latest --port=80
+  460  kubectl expose deployment mynginxapp --type=NodePort
+  461  kubectl delete svc mynginxapp
+  462  kubectl delete deployment mynginxapp
+  463  kubectl create  -f ./local-bizInv-app.yml 
+  464  kubectl get pods
+  465  kubectl delete -f ./local-bizInv-app.yml 
+  466  kubectl create  -f ./local-bizInv-app.yml 
+  467  kubectl get pods
+  468  kubectl create  -f ./local-bizInv-app.yml 
+  469  kubectl get pods
+  470  kubectl delete -f ./local-bizInv-app.yml 
+  471  kubectl create  -f ./local-bizInv-app.yml 
+  472  kubectl get pods
+  473  kubectl logs bizinv-app-deployment-67b5f97b94-5s6m7
+  474  kubectl logs bizinv-app-deployment-67b5f97b94-vmw6n
+  475  kubectl logs bizinv-app-deployment-67b5f97b94-vmw6n 
+  476  kubectl exec -it bizinv-app-deployment-67b5f97b94-vmw6nn -- `cat /etc/nginx/nginx.conf`
+  477  kubectl exec bizinv-app-deployment-67b5f97b94-vmw6nn -- `cat /etc/nginx/nginx.conf`
+  478  kubectl exec bizinv-app-deployment-67b5f97b94-vmw6nn -- /bin/bash
+  479  kubectl exec -it bizinv-app-deployment-67b5f97b94-vmw6nn -- /bin/bash
+  480  kubeclt get pods
+  481  kubectl 
+  482  kubectl get pods
+  483  kubectl exec -it bizinv-app-deployment-67b5f97b94-vmw6n -- /bin/bash
+  484  kubectl exec -it bizinv-app-deployment-67b5f97b94-vmw6n -- /bin/sh
+  485  kubectl get pods
+  486  kubectl get svc 
+  487  kubectl exec -it bizinv-app-deployment-67b5f97b94-vmw6n -- /bin/sh
+  488  kubectl delete -f ./local-bizInv-app.yml 
+  489  kubectl create  -f ./local-bizInv-app.yml 
+  490  kubectl get pods
+  491  kubectl logs bizinv-app-deployment-67b5f97b94-dt89l
+  492  kubectl get pods
+  493  kubectl logs bizinv-app-deployment-67b5f97b94-rlpbk
+  494  kubectl logs bizinv-app-deployment-67b5f97b94-dt89l
+  495  kubectl get pods
+  496  kubectl logs bizinv-app-deployment-67b5f97b94-dt89l
+  497  kubectl exec -it bizinv-app-deployment-67b5f97b94-vmw6n -- /bin/sh 
+  498  kubectl get pods
+  499  kubectl exec -it bizinv-app-deployment-67b5f97b94-dt89l -- /bin/sh 
+  500  kubectl delete -f ./local-bizInv-app.yml 
+  501  kubectl create  -f ./local-bizInv-app.yml 
+  502  kubectl get pods
+  503  kubectl delete -f ./local-bizInv-app.yml 
+  504  kubectl create  -f ./local-bizInv-app.yml 
+  505  kubectl get pods
+  506  kubectl logs bizinv-app-deployment-67b5f97b94-b6cwf
+  507  kubectl delete -f ./local-bizInv-app.yml 
+  508  kubectl create  -f ./local-bizInv-app.yml 
+  509  kubectl get pods
+  510  kubectl delete -f ./local-bizInv-app.yml 
+  511  kubectl create  -f ./local-bizInv-app.yml 
+  512  kubectl delete -f ./local-bizInv-app.yml 
+  513  kubectl create  -f ./local-bizInv-app.yml 
+  514  kubectl get pods
+  515  kubectl logs bizinv-app-deployment-67b5f97b94-kdt5k
+  516  kubectl get pods
+  517  kubectl get svc
+  518  curl -v http://10.105.105.215:80/api/v1.0/user/login
+  519  minikube service bizinv-app
+  520  curl -v http://192.168.49.2:31463
+  521  curl -v http://192.168.49.2:31463/api/
+  522  curl -v http://192.168.49.2:31463/api/v1.0/user/login
+  523  kubectl get pods
+  524  kubectl port-forward --address 10.0.124.145 services/bizinv-app 8080:80
+  525  cd /data/app/configs/
+  526  kubectl delete  -f ./local-bizInv-app.yml 
+  527  kubectl create  -f ./local-bizInv-app.yml 
+  528  kubectl get pods
+  529  kubectl logs bizinv-app-deployment-67b5f97b94-pdtb4
+  530  kubectl delete  -f ./local-bizInv-app.yml 
+  531  kubectl create  -f ./local-bizInv-app.yml 
+  532  kubectl get pods
+  533  kubectl delete  -f ./local-bizInv-app.yml 
+  534  kubectl create  -f ./local-bizInv-app.yml 
+  535  kubectl get pods
+  536  kubectl exec -it bizinv-app-deployment-67b5f97b94-mfrh4 -- /bin/sh 
+  537  kubectl delete  -f ./local-bizInv-app.yml 
+  538  kubectl create  -f ./local-bizInv-app.yml 
+  539  kubectl get pods
+  540  kubectllogs bizinv-app-deployment-67b5f97b94-5lfhz
+  541  kubectl logs bizinv-app-deployment-67b5f97b94-5lfhz
+  542  kubectl get pods
+  543  kubectl exec -it bizinv-app-deployment-67b5f97b94-5lfhz -- /bin/sh 
+  544  kubectl exec -it bizinv-app-deployment-67b5f97b94-5lfhz -- /bin/bash
+  545  kubectl delete  -f ./local-bizInv-app.yml 
+  546  kubectl create  -f ./local-bizInv-app.yml 
+  547  kubectl get pods
+  548  kubectl exec -it bizinv-app-deployment-67b5f97b94-5lfhz -- /bin/bash
+  549  kubectl exec -it bizinv-app-deployment-67b5f97b94-fxdpt -- /bin/bash
+  550  kubectl get pods
+  551  kubectl delete  -f ./local-bizInv-app.yml 
+  552  kubectl create  -f ./local-bizInv-app.yml 
+  553  kubectl get pods
+  554  kubectl logbizinv-app-deployment-67b5f97b94-zmrdr
+  555  kubectl logs bizinv-app-deployment-67b5f97b94-zmrdr
+  556  kubectl delete  -f ./local-bizInv-app.yml 
+  557  kubectl create  -f ./local-bizInv-app.yml 
+  558  kubectl get pods
+  559  kubectl logs bizinv-app-deployment-67b5f97b94-c7csp
+  560  kubectl delete  -f ./local-bizInv-app.yml 
+  561  kubectl create  -f ./local-bizInv-app.yml 
+  562  kubectl get pods
+  563  kubectl exec -it bizinv-app-deployment-67b5f97b94-psp9f -- /bin/bash
+  564  kubectl logs bizinv-app-deployment-67b5f97b94-psp9f
+  565  clear
+  566  cd /data
+  567  cd app/configs/c
+  568  cd app/configs/
+  569  kubectl delete  -f ./local-bizInv-app.yml 
+  570  kubectl create  -f ./local-bizInv-app.yml 
+  571  kubectl logs bizinv-app-deployment-67b5f97b94-psp9f
+  572  kubectl get pods
+  573  kubectl logs bizinv-app-deployment-67b5f97b94-6hwgb
+  574  kubectl logsbizinv-app-deployment-67b5f97b94-dgct5
+  575  kubectl logs bizinv-app-deployment-67b5f97b94-dgct5
+  576  kubectl get pods
+  577  kubectl logs bizinv-apiserver-deployment-5f65c6674c-5p8pr
+  578  kubectl get pods
+  579  kubectl logs bizinv-apiserver-deployment-5f65c6674c-5p8pr
+  580  kubectl delete  -f ./local-bizInv-app.yml 
+  581  kubectl create  -f ./local-bizInv-app.yml 
+  582  kubectl get pods
+  583  kubectl lbizinv-app-deployment-67b5f97b94-jkfrg
+  584  kubectl logs bizinv-app-deployment-67b5f97b94-jkfrg
+  585  kubectl logs bizinv-app-deployment-67b5f97b94-s5psf
+  586  kubectl logs bizinv-app-deployment-67b5f97b94-jkfrg
+  587  kubectl logs bizinv-app-deployment-67b5f97b94-s5psf
+  588  exit
+  589  cd /data/app/configs/
+  590  kubectl get pods
+  591  kubectl delete  -f ./local-bizInv-app.yml 
+  592  kubectl create  -f ./local-bizInv-app.yml 
+  593  kubectl get pods
+  594  kubectl logs bizinv-app-deployment-67b5f97b94-df5p9
+  595  kubectl exec -it  bizinv-app-deployment-67b5f97b94-df5p9-- /bin/bash
+  596  kubectl exec -it  bizinv-app-deployment-67b5f97b94-df5p9- --- /bin/bash
+  597  kubectl exec -it  bizinv-app-deployment-67b5f97b94-df5p9  -- /bin/bash
+  598  kubectl logs bizinv-app-deployment-67b5f97b94-df5p9
+  599  exit
+  600  kubectl port-forward --address 10.0.124.145 services/bizinv-app 8080:80
+  601  cd /data/app/configs/
+  602  kubectl delete  -f ./local-bizInv-app.yml 
+  603  kubectl create  -f ./local-bizInv-app.yml 
+  604  kubectl get pods
+  605  kubectl log bizinv-app-deployment-67b5f97b94-mpz54
+  606  kubectl logs bizinv-app-deployment-67b5f97b94-mpz54
+  607  kubectl delete  -f ./local-bizInv-app.yml 
+  608  kubectl create  -f ./local-bizInv-app.yml 
+  609  kubectl get pods
+  610  kubectl logs bizinv-app-deployment67b5f97b94-n5t8q 
+  611  kubectl get pods
+  612  kubectl logs bizinv-app-deployment-67b5f97b94-n5t8q
+  613  kubectl get pods
+  614  kubectl delete  -f ./local-bizInv-app.yml 
+  615  kubectl create  -f ./local-bizInv-app.yml 
+  616  kubectl get pods
+  617  kubectl logs bizinv-app-deployment-67b5f97b94-wt6lf
+  618  kubectl logs bizinv-app-deployment-67b5f97b94-s9f25
+  619  kubectl logs bizinv-app-deployment-67b5f97b94-wt6lf
+  620  kubectl logs bizinv-app-deployment-67b5f97b94-s9f25
+  621  kubectl logs bizinv-app-deployment-67b5f97b94-wt6lf
+  622  kubectl logs bizinv-app-deployment-67b5f97b94-s9f25
+  623  kubectl logs bizinv-app-deployment-67b5f97b94-wt6lf
+  624  cd /data/app/configs/
+  625  kubectl delete  -f ./local-bizInv-app.yml 
+  626  kubectl create  -f ./local-bizInv-app.yml 
+  627  kubectl get pods
+  628  kubectl logs bizinv-app-deployment-67b5f97b94-wgkdw
+  629  kubectl logs bizinv-app-deployment-67b5f97b94-2chlf
+  630  kubectl get pods
+  631  kubectl exec -it  bizinv-app-deployment-67b5f97b94-2chlf -- /bin/bash
+  632  kubectl get pods -n ingress-nginx
+  633  ls
+  634  cat local-bizInv-app.yml 
+  635  cd /data/app/configs/
+  636  kubectl delete  -f ./local-bizInv-app.yml 
+  637  kubectl create  -f ./local-bizInv-app.yml 
+  638  kubectl get pods 
+  639  kubectl delete  -f ./local-bizInv-app.yml 
+  640  kubectldelete -f ./local-bizInv-apiserver.yml 
+  641  kubectl delete -f ./local-bizInv-apiserver.yml 
+  642  kubectl  create  -f ./local-bizInv-apiserver.yml 
+  643  kubectl delete -f ./local-bizInv-apiserver.yml 
+  644  vi ./local-bizInv-apiserver.yml 
+  645  vi ./local-bizInv-app.yml 
+  646  kubectl  create  -f ./local-bizInv-apiserver.yml 
+  647  kubectl create  -f ./local-bizInv-app.yml 
+  648  kubectl get pods 
+  649  minikube stop
+  650  minikube status
+  651  minikube start options
+  652  kubectl get pods 
+  653  kubectl logs bizinv-app-deployment-67b5f97b94-9pt65
+  654  kubectl apply  -f ./local-bizInv-app.yml 
+  655  kubectl get pods 
+  656  minikube stop
+  657  kubectl get pods 
+  658  ifconfig
+  659  minikube start 
+  660  kubectl get pods 
+  661  kubectl get svc -o wide
+  662  minikube 
+  663  minikube  service 
+  664  minikube  service --all
+  665  minikube  service 
+  666  minikube 
+  667  kubectl get svc -o wide
+  668  minikube  service bizinv-app
+  669  ifconfig -a
+  670  history >> ~/history20211120.txt
